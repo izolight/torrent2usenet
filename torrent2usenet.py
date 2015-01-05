@@ -55,6 +55,7 @@ names = {
 	"Sense.King":re.compile(r"눈치왕"),
 	"The.Family.is.coming":re.compile(r"떴다 패밀리"),
 	"Special.Crimes.Force":re.compile(r"특수사건전담반"),
+	"April.Kiss":re.compile(r"4월의\s*키스"),
 	#ent
 	"Superstar.K6.B-Side":re.compile(r"슈퍼스타K 6 B-SIDE"),
 	"Hello.Stranger":re.compile(r"헬로 이방인"),
@@ -148,6 +149,7 @@ names = {
 	"Vienna.Philharmonic.Orchestra.New.Years.Concert":re.compile(r"비엔나 필하모닉 오케스트라 신년음악회"),
 	"Section.TV":re.compile(r"섹션TV 연예통신"),
 	"Gourmet.Road":re.compile(r"식신로드"),
+	"Top.Gear.Korea":re.compile(r"탑\s*기어 코리아"),
 	}
 
 for filename in directory:

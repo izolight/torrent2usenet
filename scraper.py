@@ -13,16 +13,16 @@ def open_site(url):
 	return content
 
 def get_links(url):
-	print('Getting links from: %s' % url)
+#	print('Getting links from: %s' % url)
 	content = open_site(url)
 	
-	link_re = re.compile(r"class=\"subject\">\s*.{55}wr_id=(\d{5})")
+	link_re = re.compile(r"class=\"subject\">\s*.{0,55}wr_id=(\d{5})")
 	link_ids = re.findall(link_re,content)
 
 	return link_ids
 
 def extract_magnet(url):
-	print('Extracting magnets from: %s' % url)
+#	print('Extracting magnets from: %s' % url)
 	content = open_site(url)
 	
 	magnet_re = re.compile(r"(magnet:\?xt=urn:btih:)(\w{40})")
@@ -38,7 +38,7 @@ def is_in_db(torrent_hash):
 	c.execute("SELECT * FROM downloads WHERE hash = '%s'" % torrent_hash)
 	if (c.fetchone()):		
 		conn.close()
-		print('%s found in DB' % torrent_hash)
+#		print('%s found in DB' % torrent_hash)
 		return True
 	conn.close()
 	return False
@@ -59,15 +59,16 @@ def grab_magnets(url):
 		link = url + '&wr_id=' + link_id
 		t_hash, m_link = extract_magnet(link)
 		if (is_in_db(t_hash)):
-			print('sleeping 5 secs')		
+#			print('sleeping 5 secs')		
 			time.sleep(5)
 			break
 		else:
 			convert_and_move(m_link, t_hash)
-			print('sleeping 5 secs')		
+#			print('sleeping 5 secs')		
 			time.sleep(5)
 
 grab_magnets(DRAMA)
 grab_magnets(ENT)
 
 sys.exit()
+

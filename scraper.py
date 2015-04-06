@@ -4,6 +4,7 @@ import re, sqlite3, os, shutil, time, sys
 
 DRAMA = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_drama'
 ENT = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_ent'
+TEMP = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_drama&page=5'
 
 def open_site(url):
 	req = rq.Request(url)
@@ -60,15 +61,16 @@ def grab_magnets(url):
 		t_hash, m_link = extract_magnet(link)
 		if (is_in_db(t_hash)):
 #			print('sleeping 5 secs')		
-			time.sleep(5)
+			time.sleep(3)
 			break
 		else:
 			convert_and_move(m_link, t_hash)
 #			print('sleeping 5 secs')		
-			time.sleep(5)
+			time.sleep(3)
 
-grab_magnets(DRAMA)
-grab_magnets(ENT)
+#grab_magnets(DRAMA)
+#grab_magnets(ENT)
+grab_magnets(TEMP)
 
 sys.exit()
 

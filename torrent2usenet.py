@@ -128,6 +128,8 @@ names = {
 	"A.Great.Story":re.compile(r"위대한 이야기"),
 	"The.Wind.Blows.In.The.Direction.Of.Hope":re.compile(r"바람은 소망하는 곳으로 분다"),
 	"Missing.Noir.M":re.compile(r"실종\s*느와르 M"),
+	"Genuine.Love":re.compile(r"순정에 반하다"),
+	"The.Lover":re.compile(r"더 러버"),
 	#ent
 	"Superstar.K6.B-Side":re.compile(r"슈퍼스타K 6 B-SIDE"),
 	"Hello.Stranger":re.compile(r"헬로 이방인"),
@@ -328,8 +330,9 @@ names = {
 	"Same.Bed.Different.Drama":re.compile(r"동상이몽\s*괜찮아\s*괜찮아"),
 	"Grandpas.over.Flowers":re.compile(r"꽃보다 할"),
 	"Show.Me.The.Money":re.compile(r"쇼미더머니"),
-	"The.Girl.Who.Sees.Smell":re.compile(r"냄새를 보는 소녀"),
+	"The.Girl.Who.Sees.Smell":re.compile(r"냄새를\s*보는\s*소녀"),
 	"Crime.Scene":re.compile(r"크라임씬"),
+	"The.Bunker":re.compile(r"더 벙커"),
 	# HDTV Feature
 	"The.Hard.Goodbye":re.compile(r"내가 살았던 집"),
 	"The.Post.Horse.Curse":re.compile(r"역마"),
@@ -350,6 +353,8 @@ names = {
 
 for filename in directory:
 	if (os.path.isdir(filename)):
+		continue
+	if (re.search(r"HDione",filename)):
 		continue
 	for key in names:
 		if (re.search(names[key],filename)):

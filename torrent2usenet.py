@@ -14,7 +14,18 @@ directory = os.listdir(TMP_DIR)
 
 #Hangul to English matching
 names = {
+	"The.Body.Show":re.compile(r"더 바디쇼"),
+	"Open.Up":re.compile(r"맴을 열어봐"),
+	"My.Unfortunate.Boyfriend":re.compile(r"나의 유감스러운 남자친구"),
+	"Splendid.Politics":re.compile(r"화정"),
+	"Style.For.You":re.compile(r"스타일 포유"),
+	"Exciting.India":re.compile(r"두근두근 인도"),
+	"Mother.Person":re.compile(r"엄마사람"),
+	"Dancing.9":re.compile(r"댄싱9"),
+	"The.Superman.Age":re.compile(r"초인시대"),
 	#drama
+	"Hair.Day":re.compile(r"머리 심는 날"),
+	"Funny.Girl":re.compile(r"웃기는 여자"),
 	"Mr.Back":re.compile(r"미스터 백"),
 	"Pinocchio":re.compile(r"피노키오"),
 	"The.Kings.Face":re.compile(r"왕의 얼굴"),
@@ -127,9 +138,12 @@ names = {
 	"Angry.Mom":re.compile(r"앵그리맘"),
 	"A.Great.Story":re.compile(r"위대한 이야기"),
 	"The.Wind.Blows.In.The.Direction.Of.Hope":re.compile(r"바람은 소망하는 곳으로 분다"),
-	"Missing.Noir.M":re.compile(r"실종\s*느와르 M"),
+	"Missing.Noir.M":re.compile(r"실종\s*느와르\.*M"),
 	"Genuine.Love":re.compile(r"순정에 반하다"),
 	"The.Lover":re.compile(r"더 러버"),
+	"Flower.Boys.Next.Door":re.compile(r"이웃집 꽃미남"),
+	"Love.From.Today":re.compile(r"오늘부터 사랑해"),
+	"Lets.Eat":re.compile(r"식샤를 합시다"),
 	#ent
 	"Superstar.K6.B-Side":re.compile(r"슈퍼스타K 6 B-SIDE"),
 	"Hello.Stranger":re.compile(r"헬로 이방인"),
@@ -163,6 +177,7 @@ names = {
 	"Good.Sunday.Running.Man":re.compile(r"(일요일이 좋다\s*-\s*)*런닝맨"),
 #	"Good.Sunday.Survival.Audition.K-Pop.Star":re.compile(r"일요일이 좋다-서바이벌 오디션 K팝스타"),
 	"The.Return.of.Superman":re.compile(r"슈퍼맨이 돌아왔다"),
+	"Our.Sunday.Night.King.of.Masked.Singers":re.compile(r"일밤 1부 복면가왕"),
 	"Our.Sunday.Night.Daddy.Where.Are.You.Going":re.compile(r"(일밤 1부 )*아빠\!* 어디가"),
 	"Our.Sunday.Night.Real.Man":re.compile(r"(일밤 2부 )*진짜\s*사나이"),
 	"Our.Sunday.Night.Animals":re.compile(r"일밤 1부 애니멀즈"),
@@ -321,7 +336,7 @@ names = {
 	"The.Secrets.of.Nature":re.compile(r"천기누설"),
 	"Picnic.Live":re.compile(r"피크닉 라이브 소풍"),
 	"Gagman.KimYoungCheols.Shameless.Travel.English.With.Deeva.Jessica":re.compile(r"개그맨 김영철의 뻔뻔한 여행영어 with 디바제시카\(Deeva Jessica\)"),
-	"Match.Made.In.Heaven.Returns":re.compile(r"천생연분 리턴즈"),
+	"Match.Made.In.Heaven.Returns":re.compile(r"천생연분\.*\s*리턴즈"),
 	"How.About.Tonight":re.compile(r"오늘밤 어때"),
 	"Little.Big.Hero":re.compile(r"리틀빅 히어로"),
 	"Delicious.Guys":re.compile(r"맛있는녀석들"),
@@ -354,8 +369,8 @@ names = {
 for filename in directory:
 	if (os.path.isdir(filename)):
 		continue
-	if (re.search(r"HDione",filename)):
-		continue
+#	if (re.search(r"HDione",filename)):
+#		continue
 	for key in names:
 		if (re.search(names[key],filename)):
 			#print('processing %s' % filename)

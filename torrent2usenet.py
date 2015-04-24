@@ -14,6 +14,20 @@ directory = os.listdir(TMP_DIR)
 
 #Hangul to English matching
 names = {
+	"Nympho.Island":re.compile(r"색녀도"),
+	"3rd.Republic":re.compile(r"제3공화국"),
+	"Love.Switch":re.compile(r"러브스위치"),
+	"K-Pop.Star":re.compile(r"케이팝스타"),
+	"Divorce.Lawyer.in.Love":re.compile(r"이혼변호사는 연애중"),
+	"A.Look.At.Myself":re.compile(r"나를 돌아봐"),
+	"Miss.Mermaid":re.compile(r"인어아가씨"),
+	"The.Three.Musketeers":re.compile(r"해외걸작드라마 삼총사"),
+	"Make.a.Woman.Cry":re.compile(r"여자를 울려"),
+	"Hilarious.Housewives":re.compile(r"태희혜교지현이"),
+	"Catch.Music.if.you.can":re.compile(r"캐치 뮤직 이프 유 캔"),
+	"Talkshow.Parents":re.compile(r"토크쇼 부모"),
+	"Mask.King":re.compile(r"복면가왕"),
+	"MiSaGo":re.compile(r"두근두근 감동카메라 미사고"),
 	"The.Body.Show":re.compile(r"더 바디쇼"),
 	"Open.Up":re.compile(r"맴을 열어봐"),
 	"My.Unfortunate.Boyfriend":re.compile(r"나의 유감스러운 남자친구"),
@@ -138,7 +152,7 @@ names = {
 	"Angry.Mom":re.compile(r"앵그리맘"),
 	"A.Great.Story":re.compile(r"위대한 이야기"),
 	"The.Wind.Blows.In.The.Direction.Of.Hope":re.compile(r"바람은 소망하는 곳으로 분다"),
-	"Missing.Noir.M":re.compile(r"실종\s*느와르\.*M"),
+	"Missing.Noir.M":re.compile(r"실종\s*느와르.*M"),
 	"Genuine.Love":re.compile(r"순정에 반하다"),
 	"The.Lover":re.compile(r"더 러버"),
 	"Flower.Boys.Next.Door":re.compile(r"이웃집 꽃미남"),
@@ -177,7 +191,7 @@ names = {
 	"Good.Sunday.Running.Man":re.compile(r"(일요일이 좋다\s*-\s*)*런닝맨"),
 #	"Good.Sunday.Survival.Audition.K-Pop.Star":re.compile(r"일요일이 좋다-서바이벌 오디션 K팝스타"),
 	"The.Return.of.Superman":re.compile(r"슈퍼맨이 돌아왔다"),
-	"Our.Sunday.Night.King.of.Masked.Singers":re.compile(r"일밤 1부 복면가왕"),
+#	"Our.Sunday.Night.King.of.Masked.Singers":re.compile(r"일밤 1부 복면가왕"),
 	"Our.Sunday.Night.Daddy.Where.Are.You.Going":re.compile(r"(일밤 1부 )*아빠\!* 어디가"),
 	"Our.Sunday.Night.Real.Man":re.compile(r"(일밤 2부 )*진짜\s*사나이"),
 	"Our.Sunday.Night.Animals":re.compile(r"일밤 1부 애니멀즈"),
@@ -191,9 +205,9 @@ names = {
 	"Lets.Go.Dream.Team":re.compile(r"출발\s*드림팀"),
 	"Extreme.Surprise":re.compile(r"익스트림 서프라이즈"),
 	"Mysterious.TV.Surprise":re.compile(r"신비한TV 서프라이즈"),
-	"Concert.7080":re.compile(r"(배철수의 )*콘서트 7080"),
+	"Concert.7080":re.compile(r"(배철수의 )*콘서트\s*7080"),
 	"Salon.de.raison":re.compile(r"속사정\s*쌀롱"),
-	"Take.Care.of.the.Fridge":re.compile(r"냉장고를 부탁해"),
+	"Take.Care.of.the.Fridge":re.compile(r"냉장고를\s*부탁해"),
 	"Abnormal.Summit":re.compile(r"비정상회담"),
 	"Hello.Counselor":re.compile(r"(대국민 토크쇼 )*안녕하세요"),
 	"Healing.Camp":re.compile(r"힐링캠프( 기쁘지 아니한가)*"),
@@ -293,7 +307,7 @@ names = {
 	"Ultimate.Quiz.Show.Q":re.compile(r"최강연승 퀴즈쇼 큐"),
 	"Space.Sympathy":re.compile(r"스페이스 공감"),
 	"Where.is.my.Friends.Home":re.compile(r"내 친구의 집은 어디인가"),
-	"My.Little.Television":re.compile(r"(마이\s*리틀\s*텔레비전|마리테)"),
+	"My.Little.Television":re.compile(r"마이\s*리틀\s*텔(레|리)비전"),
 	"Independent.Cinema":re.compile(r"독립영화관"),
 	"Car.Center":re.compile(r"카(\!)*센터"),
 	"Saturday.Night.Live.Korea":re.compile(r"(SNL|snl)\s*코리아"),
@@ -306,7 +320,7 @@ names = {
 	"Challenge.1000.Songs":re.compile(r"도전 1000곡"),
 	"A.Dinner.Of.Fisherman":re.compile(r"어부의\s*만찬"),
 	"Burning.Youth":re.compile(r"불타는 청춘"),
-	"Mystery.Music.Show.Mask.King":re.compile(r"미스터리 음악쇼 복면가왕"),
+#	"Mystery.Music.Show.Mask.King":re.compile(r"미스터리 음악쇼 복면가왕"),
 	"Tiger.Mask.Magic.Show":re.compile(r"타이거 마스크 매직쇼"),
 	"Return.To.Farming.Project":re.compile(r"귀농프로젝트"),
 	"Idolstar.Championship":re.compile(r"아이돌스타 선수권대회"),
@@ -331,7 +345,7 @@ names = {
 	"Sisters.Choice":re.compile(r"언니들의 선택"),
 	"Show.Champion":re.compile(r"쇼 챔피언"),
 	"Stardust":re.compile(r"스타더스트 뮤비뱅크"),
-	"I.See.Your.Voice":re.compile(r"너의 목소리가 보여"),
+	"I.See.Your.Voice":re.compile(r"너의\s*목소리가\s*보여"),
 	"Problematic.Man":re.compile(r"문제적 남자"),
 	"The.Secrets.of.Nature":re.compile(r"천기누설"),
 	"Picnic.Live":re.compile(r"피크닉 라이브 소풍"),
@@ -343,7 +357,7 @@ names = {
 	"Sonamoos.Pet.House":re.compile(r"소나무의 펫하우스"),
 	"One.Night.Study":re.compile(r"원나잇 스터디"),
 	"Same.Bed.Different.Drama":re.compile(r"동상이몽\s*괜찮아\s*괜찮아"),
-	"Grandpas.over.Flowers":re.compile(r"꽃보다 할"),
+	"Grandpas.over.Flowers":re.compile(r"꽃보다 할배"),
 	"Show.Me.The.Money":re.compile(r"쇼미더머니"),
 	"The.Girl.Who.Sees.Smell":re.compile(r"냄새를\s*보는\s*소녀"),
 	"Crime.Scene":re.compile(r"크라임씬"),
@@ -405,7 +419,7 @@ for filename in directory:
 			os.mkdir(TMP_DIR + foldername) # make folder without file ending			
 			shutil.move(TMP_DIR + new_filename, TMP_DIR + foldername) # move file to folder
 #			print("calling rarnpar on %s" % foldername)
-			os.system("rarnpar -D " + TMP_DIR + foldername) # rar n par
+			os.system("rarnpar -b 2304000 -D " + TMP_DIR + foldername) # rar n par
 			os.remove(TMP_DIR + foldername + "/" + new_filename) # remove video
 			os.system("GoPostStuff -d "+ TMP_DIR + foldername) # post rar n pars
 			shutil.rmtree(TMP_DIR + foldername) # remove files						

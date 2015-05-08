@@ -14,6 +14,9 @@ directory = os.listdir(TMP_DIR)
 
 #Hangul to English matching
 names = {
+	"Hallyustar.Report":re.compile(r"한류스타 리포트"),
+	"Rediscovery.of.Immortal.Song":re.compile(r"불후의 재발견"),
+	"Asia.Prism":re.compile(r"아시아 프리즘"),
 	"Sixteen":re.compile(r"식스틴"),
 	"Cool.Kkadang":re.compile(r"쿨까당"),
 	"Birds.Dont.Cry":re.compile(r"울지 않는 새"),
@@ -406,46 +409,33 @@ names = {
 for filename in directory:
 	if (os.path.isdir(filename)):
 		continue
-#	if (re.search(r"HDione",filename)):
-#		continue
-	for key in names:
-		if (re.search(names[key],filename)):
-			#print('processing %s' % filename)
-			# preprocessing
-			# convert to english
-			new_filename = re.sub(names[key],key,filename)
-#			print("removing tags from: %s" % filename)
-			new_filename = re.sub(r"\[.*\]\s*","",new_filename)
-#			print("removing 내정보releasename from: %s" % new_filename)
-			new_filename = re.sub(r"\.내정보","",new_filename)
-#			print("converting %s to english" % new_filename)
-			# remove whitespace
-#			print("replacing whitespace with dots in %s" % new_filename)
-			new_filename = re.sub(r"\s",".",new_filename)
-			# part 1,2,3 etc
-#			print("replacing 부with Part in %s" % new_filename)
-			new_filename = re.sub(r"(\d)부", r"Part\1", new_filename)
-			new_filename = re.sub(r"(\d{1,3})(?:화|회)", r"E\1", new_filename)
-			new_filename = re.sub(r"시즌","S", new_filename)
-			new_filename = re.sub(r"신년특집", "New.Year.Special", new_filename)
-			new_filename = re.sub(r"설날특집", "Lunar.New.Year.Special", new_filename)
-			new_filename = re.sub(r"설 특집", "Lunar.New.Year.Special", new_filename)
-			new_filename = re.sub(r"설특선", "Lunar.New.Year.Special", new_filename)	
-			new_filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", new_filename)
-			new_filename = re.sub(r"다큐멘터리", "Documentary", new_filename)
-#			new_filename = re.sub(r"스페셜", "Special", new_filename)
-			new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
-#			print("renaming %s to %s" % (filename,new_filename))
-			os.rename(TMP_DIR + filename, TMP_DIR + new_filename) # rename hangul to korean
-			foldername = re.sub(r"\.\w*$","",new_filename)
-#			print("making folder %s" % foldername)
-			os.mkdir(TMP_DIR + foldername) # make folder without file ending			
-			shutil.move(TMP_DIR + new_filename, TMP_DIR + foldername) # move file to folder
-#			print("calling rarnpar on %s" % foldername)
-			os.system("rarnpar -b 2304000 -D " + TMP_DIR + foldername) # rar n par
-			os.remove(TMP_DIR + foldername + "/" + new_filename) # remove video
-			os.system("GoPostStuff -d "+ TMP_DIR + foldername) # post rar n pars
-			shutil.rmtree(TMP_DIR + foldername) # remove files						
+	else:
+		for key in names:
+			if (re.search(names[key],filename)):
+				# convert to english
+				new_filename = re.sub(names[key],key,filename)
+				new_filename = re.sub(r"\[.*\]\s*","",new_filename)
+				new_filename = re.sub(r"\.내정보","",new_filename)
+				new_filename = re.sub(r"\s",".",new_filename)
+				new_filename = re.sub(r"(\d)부", r"Part\1", new_filename)
+				new_filename = re.sub(r"(\d{1,3})(?:화|회)", r"E\1", new_filename)
+				new_filename = re.sub(r"시즌","S", new_filename)
+				new_filename = re.sub(r"신년특집", "New.Year.Special", new_filename)
+				new_filename = re.sub(r"설날특집", "Lunar.New.Year.Special", new_filename)
+				new_filename = re.sub(r"설 특집", "Lunar.New.Year.Special", new_filename)
+				new_filename = re.sub(r"설특선", "Lunar.New.Year.Special", new_filename)	
+				new_filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", new_filename)
+				new_filename = re.sub(r"다큐멘터리", "Documentary", new_filename)
+	#			new_filename = re.sub(r"스페셜", "Special", new_filename)
+				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
+#				os.rename(TMP_DIR + filename, TMP_DIR + new_filename) # rename hangul to korean
+#				foldername = re.sub(r"\.\w*$","",new_filename)
+				os.mkdir(TMP_DIR + new_filename) # make folder without file ending			
+				shutil.move(TMP_DIR + filename, TMP_DIR + new_filename) # move file to folder
+				os.system("rarnpar -b 2304000 -D " + TMP_DIR + new_filename) # rar n par
+				os.remove(TMP_DIR + new_filename + "/" + filename) # remove video
+				os.system("GoPostStuff -d "+ TMP_DIR + new_filename) # post rar n pars
+				shutil.rmtree(TMP_DIR + new_filename) # remove files						
 
 os.remove(TMP_DIR + RUNNING)
 sys.exit()

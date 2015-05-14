@@ -14,6 +14,8 @@ directory = os.listdir(TMP_DIR)
 
 #Hangul to English matching
 names = {
+	"Why.Cant.We.Stop.Them":re.compile(r"웬만해선 그들을 막을 수 없다"),
+	"Warm.And.Cozy":re.compile(r"맨도롱 또돗"),
 	"Protect.the.Family":re.compile(r"가족을 지켜라"),
 	"Improvisation":re.compile(r"순발력"),
 	"Playful.Kiss":re.compile(r"장난스런키스"),
@@ -422,6 +424,7 @@ for filename in directory:
 			if (re.search(names[key],filename)):
 				# convert to english
 				new_filename = re.sub(names[key],key,filename)
+				new_filename = re.sub(r"\(|\)",".",new_filename)
 				new_filename = re.sub(r"\[.*\]\s*","",new_filename)
 				new_filename = re.sub(r"\.내정보","",new_filename)
 				new_filename = re.sub(r"\s",".",new_filename)
@@ -436,12 +439,14 @@ for filename in directory:
 				new_filename = re.sub(r"다큐멘터리", "Documentary", new_filename)
 	#			new_filename = re.sub(r"스페셜", "Special", new_filename)
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
-#				os.rename(TMP_DIR + filename, TMP_DIR + new_filename) # rename hangul to korean
+				cleanname = re.sub(r"\(|\)",".",filename)
+				cleanname = re.sub(r"(\(|\))", ".", filename)
+				os.rename(filename, cleanname)
 #				foldername = re.sub(r"\.\w*$","",new_filename)
-				os.mkdir(TMP_DIR + new_filename) # make folder without file ending			
-				shutil.move(TMP_DIR + filename, TMP_DIR + new_filename) # move file to folder
+				os.mkdir(TMP_DIR + new_filename) # make folder			
+				shutil.move(TMP_DIR + cleanname, TMP_DIR + new_filename) # move file to folder
 				os.system("rarnpar -b 2304000 -D " + TMP_DIR + new_filename) # rar n par
-				os.remove(TMP_DIR + new_filename + "/" + filename) # remove video
+				os.remove(TMP_DIR + new_filename + "/" + cleanname) # remove video
 				os.system("GoPostStuff -d "+ TMP_DIR + new_filename) # post rar n pars
 				shutil.rmtree(TMP_DIR + new_filename) # remove files						
 

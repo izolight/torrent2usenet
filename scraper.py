@@ -46,7 +46,8 @@ def is_in_db(torrent_hash):
 
 def convert_and_move(magnet_link, torrent_hash):
 	print("Converting: %s" % magnet_link)
-	os.system('/home/***REMOVED***/mag2tor.sh ' + magnet_link)
+	os.system("aria2c '%s'" % magnet_link)
+#	os.system('/home/***REMOVED***/mag2tor.sh ' + magnet_link)
 #	shutil.move('/home/***REMOVED***/meta-' + torrent_hash + '.torrent', '/home/***REMOVED***/downloads/watch/')
 	conn = sqlite3.connect('/home/***REMOVED***/downloads.db')
 	c = conn.cursor()

@@ -1,0 +1,186 @@
+2015-05-14 14:01:58.915954 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6947
+2015-05-14 14:01:58.916794 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6947
+2015-05-14 14:01:58.917067 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6952
+2015-05-14 14:01:58.917132 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6952
+2015-05-14 14:02:19.354780 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]b01a478367c0ce1a8b08c554605a38108dd3061d
+2015-05-14 14:02:19.355099 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/b01a478367c0ce1a8b08c554605a38108dd3061d.torrent.
+2015-05-14 14:02:30.951041 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6929
+2015-05-14 14:02:30.951835 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6929
+2015-05-14 14:02:30.952101 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6925
+2015-05-14 14:02:30.952165 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6925
+2015-05-14 14:02:51.329046 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]862147676a0d64a45bf382d4472cd7a08bd9e4aa
+2015-05-14 14:02:51.329324 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/862147676a0d64a45bf382d4472cd7a08bd9e4aa.torrent.
+2015-05-14 14:02:58.604507 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6983
+2015-05-14 14:02:58.605336 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6983
+2015-05-14 14:02:58.605623 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6914
+2015-05-14 14:02:58.605688 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6914
+2015-05-14 14:03:24.912940 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]315fbeee42884ef51ed530fd344481ef620d5c7f
+2015-05-14 14:03:24.913219 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/315fbeee42884ef51ed530fd344481ef620d5c7f.torrent.
+2015-05-14 14:30:02.595598 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6929
+2015-05-14 14:30:02.597679 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6929
+2015-05-14 14:30:02.597956 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6966
+2015-05-14 14:30:02.598020 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6966
+2015-05-14 14:30:42.656626 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]cbb3a22f83cd56106197680317757db24273aa50
+2015-05-14 14:30:42.656924 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/cbb3a22f83cd56106197680317757db24273aa50.torrent.
+2015-05-14 14:45:02.866722 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6963
+2015-05-14 14:45:02.868644 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6963
+2015-05-14 14:45:02.868971 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6989
+2015-05-14 14:45:02.869047 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6989
+2015-05-14 14:45:24.773191 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]66b9932aa4345c066fb966075b0404f45f9d3cc7
+2015-05-14 14:45:24.773473 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/66b9932aa4345c066fb966075b0404f45f9d3cc7.torrent.
+2015-05-14 15:00:07.245486 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6982
+2015-05-14 15:00:07.246484 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6982
+2015-05-14 15:00:07.246869 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6960
+2015-05-14 15:00:07.246972 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6960
+2015-05-14 15:00:36.492768 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]0bade886e75baa5f9ca22cadb6f3220fd89ce39f
+2015-05-14 15:00:36.493094 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/0bade886e75baa5f9ca22cadb6f3220fd89ce39f.torrent.
+2015-05-14 15:00:40.943606 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6974
+2015-05-14 15:00:40.944399 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6974
+2015-05-14 15:00:40.944667 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6894
+2015-05-14 15:00:40.944736 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6894
+2015-05-14 15:01:15.225052 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]e3364cfcdcc9dfe1e82321628e863b9d92615104
+2015-05-14 15:01:15.225454 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/e3364cfcdcc9dfe1e82321628e863b9d92615104.torrent.
+2015-05-14 15:30:16.134475 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6921
+2015-05-14 15:30:16.154403 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6921
+2015-05-14 15:30:16.155348 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6961
+2015-05-14 15:30:16.155573 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6961
+2015-05-14 15:30:37.596464 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]ae39bbafb61ae10af44f56b7efdf3b9813347e88
+2015-05-14 15:30:37.596782 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/ae39bbafb61ae10af44f56b7efdf3b9813347e88.torrent.
+2015-05-14 16:00:06.781535 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6909
+2015-05-14 16:00:06.786207 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6909
+2015-05-14 16:00:06.786493 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6916
+2015-05-14 16:00:06.786560 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6916
+2015-05-14 16:01:01.578069 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]7d83e2f76fd408802a90d2440bb759916953d62c
+2015-05-14 16:01:01.578428 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/7d83e2f76fd408802a90d2440bb759916953d62c.torrent.
+2015-05-14 16:15:02.511655 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6922
+2015-05-14 16:15:02.512488 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6922
+2015-05-14 16:15:02.512758 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6889
+2015-05-14 16:15:02.512821 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6889
+2015-05-14 16:15:34.363529 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]5b1761b0024d115ce56e26f8504ec5e96f7611e6
+2015-05-14 16:15:34.363849 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/5b1761b0024d115ce56e26f8504ec5e96f7611e6.torrent.
+2015-05-14 16:15:38.822529 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6982
+2015-05-14 16:15:38.823370 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6982
+2015-05-14 16:15:38.823641 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6941
+2015-05-14 16:15:38.823705 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6941
+2015-05-14 16:16:11.054412 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]ce9e49f58f1786074819fab8d013e3c715c58b55
+2015-05-14 16:16:11.054703 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/ce9e49f58f1786074819fab8d013e3c715c58b55.torrent.
+2015-05-14 16:30:07.352299 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6958
+2015-05-14 16:30:07.353952 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6958
+2015-05-14 16:30:07.354255 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6978
+2015-05-14 16:30:07.354320 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6978
+2015-05-14 16:30:43.778073 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]06d716b062c7b9c7e3285ed6f440520d8d0649c9
+2015-05-14 16:30:43.778379 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/06d716b062c7b9c7e3285ed6f440520d8d0649c9.torrent.
+2015-05-14 16:30:53.413279 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6955
+2015-05-14 16:30:53.414131 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6955
+2015-05-14 16:30:53.414412 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6923
+2015-05-14 16:30:53.414478 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6923
+2015-05-14 16:31:14.121494 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]bfc167a75f9db65f5bda6dcfe2bcb42cf96a7d7e
+2015-05-14 16:31:14.121877 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/bfc167a75f9db65f5bda6dcfe2bcb42cf96a7d7e.torrent.
+2015-05-14 16:45:02.575145 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6987
+2015-05-14 16:45:02.576310 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6987
+2015-05-14 16:45:02.576593 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6956
+2015-05-14 16:45:02.576659 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6956
+2015-05-14 16:45:26.543869 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]c0ffeed3d69043d2b776cc2616e618c03bbdeeb9
+2015-05-14 16:45:26.548877 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/c0ffeed3d69043d2b776cc2616e618c03bbdeeb9.torrent.
+2015-05-14 16:45:31.136538 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6921
+2015-05-14 16:45:31.137699 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6921
+2015-05-14 16:45:31.138141 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6947
+2015-05-14 16:45:31.138219 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6947
+2015-05-14 16:46:11.807795 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]382f10b0ec0d22b275e2306fb06146c14d537668
+2015-05-14 16:46:11.808082 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/382f10b0ec0d22b275e2306fb06146c14d537668.torrent.
+2015-05-14 16:46:16.961625 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6923
+2015-05-14 16:46:16.962509 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6923
+2015-05-14 16:46:16.962800 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6919
+2015-05-14 16:46:16.962868 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6919
+2015-05-14 16:46:34.161627 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]1900438a944314ce8c1dc21b74873aae687de176
+2015-05-14 16:46:34.161917 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/1900438a944314ce8c1dc21b74873aae687de176.torrent.
+2015-05-14 16:46:43.271510 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6929
+2015-05-14 16:46:43.272301 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6929
+2015-05-14 16:46:43.272575 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6884
+2015-05-14 16:46:43.272639 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6884
+2015-05-14 16:47:08.919513 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]e94b17a91496d4437d4d94020d92b00283fbdc9a
+2015-05-14 16:47:08.919996 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/e94b17a91496d4437d4d94020d92b00283fbdc9a.torrent.
+2015-05-14 17:45:02.818050 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6889
+2015-05-14 17:45:02.820148 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6889
+2015-05-14 17:45:02.820445 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6885
+2015-05-14 17:45:02.820518 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6885
+2015-05-14 17:45:23.446317 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]b102678c0bcdd68bb34faa154b0bb81e9d7c58fd
+2015-05-14 17:45:23.446630 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/b102678c0bcdd68bb34faa154b0bb81e9d7c58fd.torrent.
+2015-05-14 17:45:28.823129 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6934
+2015-05-14 17:45:28.824626 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6934
+2015-05-14 17:45:28.824914 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6980
+2015-05-14 17:45:28.824982 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6980
+2015-05-14 17:46:06.647517 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]8d41070d139fb6adf2d0dd68e36941431491a954
+2015-05-14 17:46:06.647860 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/8d41070d139fb6adf2d0dd68e36941431491a954.torrent.
+2015-05-14 17:46:15.267050 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6932
+2015-05-14 17:46:15.267916 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6932
+2015-05-14 17:46:15.268203 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6937
+2015-05-14 17:46:15.268266 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6937
+2015-05-14 17:46:38.278336 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]d298a6287a02e34799cb7681457076709bc8fee3
+2015-05-14 17:46:38.315817 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/d298a6287a02e34799cb7681457076709bc8fee3.torrent.
+2015-05-14 17:46:42.739846 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6925
+2015-05-14 17:46:42.740683 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6925
+2015-05-14 17:46:42.740950 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6971
+2015-05-14 17:46:42.741014 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6971
+2015-05-14 17:47:15.441176 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]1be4e95fe57a27d0edd4f781c7db5f0f3526f985
+2015-05-14 17:47:15.441480 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/1be4e95fe57a27d0edd4f781c7db5f0f3526f985.torrent.
+2015-05-14 18:00:07.810755 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6997
+2015-05-14 18:00:07.812838 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6997
+2015-05-14 18:00:07.813127 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6909
+2015-05-14 18:00:07.813191 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6909
+2015-05-14 18:00:28.195951 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]154332dab6b47662ca673bbfd30c8b545903565f
+2015-05-14 18:00:28.198104 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/154332dab6b47662ca673bbfd30c8b545903565f.torrent.
+2015-05-14 18:00:32.767702 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6925
+2015-05-14 18:00:32.768506 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6925
+2015-05-14 18:00:32.768787 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6903
+2015-05-14 18:00:32.768854 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6903
+2015-05-14 18:00:54.098804 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]2dee1b3f8bf65de100d3710dbf0c899dabb58e84
+2015-05-14 18:00:54.099174 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/2dee1b3f8bf65de100d3710dbf0c899dabb58e84.torrent.
+2015-05-14 18:15:11.382542 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6902
+2015-05-14 18:15:11.429355 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6902
+2015-05-14 18:15:11.429654 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6910
+2015-05-14 18:15:11.429736 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6910
+2015-05-14 18:15:34.726961 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]0a14551f89732039791efeca07805ceb0bdbb258
+2015-05-14 18:15:34.727519 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/0a14551f89732039791efeca07805ceb0bdbb258.torrent.
+2015-05-14 18:15:51.609578 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6920
+2015-05-14 18:15:51.610458 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6920
+2015-05-14 18:15:51.610768 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6998
+2015-05-14 18:15:51.610841 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6998
+2015-05-14 18:16:12.776205 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]0e0033f0b3f74c84416a06a834b36466d42821ab
+2015-05-14 18:16:12.776502 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/0e0033f0b3f74c84416a06a834b36466d42821ab.torrent.
+2015-05-14 18:16:25.383181 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6978
+2015-05-14 18:16:25.383975 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6978
+2015-05-14 18:16:25.384244 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6882
+2015-05-14 18:16:25.384307 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6882
+2015-05-14 18:16:56.413257 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]9e0bfe793e195eeece81028a8cf4e62645a7caa1
+2015-05-14 18:16:56.413552 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/9e0bfe793e195eeece81028a8cf4e62645a7caa1.torrent.
+2015-05-14 18:17:05.092405 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6956
+2015-05-14 18:17:05.093220 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6956
+2015-05-14 18:17:05.093514 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6933
+2015-05-14 18:17:05.093580 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6933
+2015-05-14 18:17:30.157101 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]3d37f3ca5ca6e1f38ecd214f911c7189e437cebb
+2015-05-14 18:17:30.157403 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/3d37f3ca5ca6e1f38ecd214f911c7189e437cebb.torrent.
+2015-05-14 18:30:06.706394 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6936
+2015-05-14 18:30:06.708788 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6936
+2015-05-14 18:30:06.710547 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6923
+2015-05-14 18:30:06.710618 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6923
+2015-05-14 18:30:24.300792 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]a48dd73b88cd862ece6794b1c5544ab92221907e
+2015-05-14 18:30:24.301099 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/a48dd73b88cd862ece6794b1c5544ab92221907e.torrent.
+2015-05-14 18:30:30.381287 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6949
+2015-05-14 18:30:30.382129 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6949
+2015-05-14 18:30:30.382405 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6983
+2015-05-14 18:30:30.382493 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6983
+2015-05-14 18:30:52.404440 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]af7330202bdd6d1ff40cb8a1108bc01d6c7737cf
+2015-05-14 18:30:52.404740 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/af7330202bdd6d1ff40cb8a1108bc01d6c7737cf.torrent.
+2015-05-14 18:31:00.688973 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6950
+2015-05-14 18:31:00.711656 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6950
+2015-05-14 18:31:00.711972 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6929
+2015-05-14 18:31:00.712035 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6929
+2015-05-14 18:31:24.632075 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]8ee30f73b043265c7d78cc666dcf07116ea28efa
+2015-05-14 18:31:24.632368 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/8ee30f73b043265c7d78cc666dcf07116ea28efa.torrent.
+2015-05-14 18:31:32.775852 [NOTICE] [DHTConnectionImpl.cc:84] IPv4 DHT: listening on UDP port 6895
+2015-05-14 18:31:32.776753 [NOTICE] [DHTConnectionImpl.cc:84] IPv6 DHT: listening on UDP port 6895
+2015-05-14 18:31:32.777029 [NOTICE] [PeerListenCommand.cc:83] IPv4 BitTorrent: listening on TCP port 6904
+2015-05-14 18:31:32.777098 [NOTICE] [PeerListenCommand.cc:83] IPv6 BitTorrent: listening on TCP port 6904
+2015-05-14 18:32:00.900774 [NOTICE] [RequestGroup.cc:1160] Download complete: [METADATA]277948ec91012cd23bd0d50143bba952cb0fb5cb
+2015-05-14 18:32:00.901073 [NOTICE] [UTMetadataPostDownloadHandler.cc:94] Saved metadata as /home/***REMOVED***/.watch/277948ec91012cd23bd0d50143bba952cb0fb5cb.torrent.

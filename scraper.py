@@ -24,8 +24,7 @@ def get_links(url):
 
 def extract_magnet(url):
 #	print('Extracting magnets from: %s' % url)
-	content = open_site(url)
-	
+	content = open_site(url)	
 	magnet_re = re.compile(r"(magnet:\?xt=urn:btih:)(\w{40})")
 	magnet = re.search(magnet_re, content)
 	torrent_hash = magnet.group(2)
@@ -45,8 +44,8 @@ def is_in_db(torrent_hash):
 	return False
 
 def convert_and_move(magnet_link, torrent_hash):
-	print("Converting: %s" % magnet_link)
-	os.system("aria2c '%s'" % magnet_link)
+	print("Added: %s" % magnet_link)
+	os.system("deluge-console 'add %s'" % magnet_link)
 #	os.system('/home/***REMOVED***/mag2tor.sh ' + magnet_link)
 #	shutil.move('/home/***REMOVED***/meta-' + torrent_hash + '.torrent', '/home/***REMOVED***/downloads/watch/')
 	conn = sqlite3.connect('/home/***REMOVED***/downloads.db')

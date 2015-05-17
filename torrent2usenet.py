@@ -14,8 +14,13 @@ directory = os.listdir(TMP_DIR)
 
 #Hangul to English matching
 names = {
+	"Running":re.compile(r"심장이\s*뛴다"),
+	"Ruler.of.your.own.World":re.compile(r"네\s*멋대로\s*해라"),
+	"Surgeon.Bong.Dal.Hee":re.compile(r"외과의사\s*봉달희"),
+	"Producer":re.compile(r"프로듀사"),
+	"Orange.Marmalade":re.compile(r"오렌지 마말레이드"),
 	"Why.Cant.We.Stop.Them":re.compile(r"웬만해선 그들을 막을 수 없다"),
-	"Warm.And.Cozy":re.compile(r"맨도롱 또돗"),
+	"Warm.And.Cozy":re.compile(r"맨도롱\s*또똣"),
 	"Protect.the.Family":re.compile(r"가족을 지켜라"),
 	"Improvisation":re.compile(r"순발력"),
 	"Playful.Kiss":re.compile(r"장난스런키스"),
@@ -147,7 +152,6 @@ names = {
 	"My.Mans.Woman":re.compile(r"내 남자의 여자"),
 	"Vampire.Prosecutor.S02":re.compile(r"뱀파이어 검사2"),
 	"Beethoven.Virus":re.compile(r"베토벤 바이러스"),
-	"Surgeon.Bong.Dal.Hee":re.compile(r"외과의사 봉달희"),
 	"School.4":re.compile(r"학교4"),
 	"Witch.Amusement":re.compile(r"마녀유희"),
 	"Basketball":re.compile(r"빠스껫볼"),
@@ -188,7 +192,7 @@ names = {
 	"A.Great.Story":re.compile(r"위대한 이야기"),
 	"The.Wind.Blows.In.The.Direction.Of.Hope":re.compile(r"바람은 소망하는 곳으로 분다"),
 	"Missing.Noir.M":re.compile(r"실종\s*느와르.*M"),
-	"Genuine.Love":re.compile(r"순정에 반하다"),
+	"Falling.For.Innocence":re.compile(r"순정에 반하다"), #prev Genuine.Love
 	"The.Lover":re.compile(r"더 러버"),
 	"Flower.Boys.Next.Door":re.compile(r"이웃집 꽃미남"),
 	"Love.From.Today":re.compile(r"오늘부터 사랑해"),
@@ -441,7 +445,7 @@ for filename in directory:
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
 				cleanname = re.sub(r"\(|\)",".",filename)
 				cleanname = re.sub(r"(\(|\))", ".", filename)
-				os.rename(filename, cleanname)
+				os.rename(TMP_DIR + filename, TMP_DIR + cleanname)
 #				foldername = re.sub(r"\.\w*$","",new_filename)
 				os.mkdir(TMP_DIR + new_filename) # make folder			
 				shutil.move(TMP_DIR + cleanname, TMP_DIR + new_filename) # move file to folder

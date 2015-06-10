@@ -1,19 +1,48 @@
 #! /usr/bin/python3
-import re,shutil,os,sys
+import re, shutil, os, sys, config
 
-TMP_DIR = '/home/***REMOVED***/post_to_usenet/'
 RUNNING = 't2u.running'
 
-if (os.path.isfile(TMP_DIR + RUNNING)):
+if (os.path.isfile(config.usenet_dir + RUNNING)):
 	print('script already running, exiting')
 	sys.exit()
 
-os.system('touch ' + TMP_DIR + RUNNING)
+os.system('touch ' + config.usenet_dir + RUNNING)
 
-directory = os.listdir(TMP_DIR)
+directory = os.listdir(config.usenet_dir)
 
 #Hangul to English matching
 names = {
+	"Let.Me.In":re.compile(r"Let 미인"),
+	"Love.Letter":re.compile(r"리얼로망스 연애편지"),
+	"The.4th.Republic":re.compile(r"제4공화국"),
+	"Sunny.Days.of.Youth":re.compile(r"젊은이의 양지"),
+	"HIT.Homicide.Investigation.Team":re.compile(r"히트"),
+	"Oh.Ja.Ryong.is.Coming":re.compile(r"오자룡이 간다"),
+	"Great.Recipe":re.compile(r"대단한 레시피"),
+	"The.Returm.of.Hwang.Geum.Bok":re.compile(r"돌아온 황금복"),
+	"High.Society":re.compile(r"상류사회"),
+	"Angels.Revenge":re.compile(r"천상여자"),
+	"Famous.Princesses":re.compile(r"소문난 칠공주"),
+	"Alone.in.Love":re.compile(r"연애시대"),
+	"Pasta":re.compile(r"파스타"),
+	"Life.is.Beautiful":re.compile(r"인생은 아름다워"),
+	"The.Last.Game":re.compile(r"마지막승부"),
+	"Bokbulbok.Show":re.compile(r"복불복 쇼"),
+	"Golden.Tower":re.compile(r"황금거탑"),
+	"The.Greatest.Love":re.compile(r"최고의 사랑"),
+	"Autumn.in.My.Heart":re.compile(r"가을동화"),
+	"Huh.Joon":re.compile(r"허준"),
+	"Horse.Doctor":re.compile(r"^마의"),
+	"Big":re.compile(r"^빅"),
+	"Comedy.Stations":re.compile(r"웃음 충전소"),
+	"Chuno":re.compile(r"추노"),
+	"Goong":re.compile(r"^궁"),
+	"Feelings":re.compile(r"느낌"),
+	"God.of.Study":re.compile(r"공부의 신"),
+	"Love.in.your.Bosom":re.compile(r"사랑을 그대품안에"),
+	"The.3rd.Republic":re.compile(r"제\s*3공화국"),
+	"MBC.Best.Theater":re.compile(r"베스트\s*극장"),
 	"The.Chaser":re.compile(r"추적자"),
 	"Pumpkin.Seed":re.compile(r"호박씨"),
 	"Match":re.compile(r"짝"),
@@ -118,7 +147,6 @@ names = {
 	"Moonshine":re.compile(r"문샤인"),
 	"Heart.A.Tag":re.compile(r"하트어택"),
 	"Nympho.Island":re.compile(r"색녀도"),
-	"3rd.Republic":re.compile(r"제3공화국"),
 	"Love.Switch":re.compile(r"러브스위치"),
 	"K-Pop.Star":re.compile(r"케이팝스타"),
 	"Divorce.Lawyer.in.Love":re.compile(r"이혼변호사는 연애중"),
@@ -496,7 +524,7 @@ for filename in directory:
 				new_filename = re.sub(r"\.내정보","",new_filename)
 				new_filename = re.sub(r"\s",".",new_filename)
 				new_filename = re.sub(r"(\d{1,2})부", r"Part\1", new_filename)
-				new_filename = re.sub(r"(?:제)(\d{1,3})(?:화|회)", r"E\1", new_filename)
+				new_filename = re.sub(r"(?:제)*(\d{1,3})(?:화|회)", r"E\1", new_filename)
 				new_filename = re.sub(r"시즌","S", new_filename)
 				new_filename = re.sub(r"신년특집", "New.Year.Special", new_filename)
 				new_filename = re.sub(r"설날특집", "Lunar.New.Year.Special", new_filename)
@@ -508,14 +536,14 @@ for filename in directory:
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
 				cleanname = re.sub(r"\(|\)",".",filename)
 				cleanname = re.sub(r"(\(|\))", ".", filename)
-				os.rename(TMP_DIR + filename, TMP_DIR + cleanname)
+				os.rename(config.usenet_dir + filename, config.usenet_dir + cleanname)
 #				foldername = re.sub(r"\.\w*$","",new_filename)
-				os.mkdir(TMP_DIR + new_filename) # make folder			
-				shutil.move(TMP_DIR + cleanname, TMP_DIR + new_filename) # move file to folder
-				os.system("rarnpar -b 2304000 -D " + TMP_DIR + new_filename) # rar n par
-				os.remove(TMP_DIR + new_filename + "/" + cleanname) # remove video
-				os.system("GoPostStuff -d "+ TMP_DIR + new_filename) # post rar n pars
-				shutil.rmtree(TMP_DIR + new_filename) # remove files						
+				os.mkdir(config.usenet_dir + new_filename) # make folder			
+				shutil.move(config.usenet_dir + cleanname, config.usenet_dir + new_filename) # move file to folder
+				os.system("rarnpar -b 2304000 -D " + config.usenet_dir + new_filename) # rar n par
+				os.remove(config.usenet_dir + new_filename + "/" + cleanname) # remove video
+				os.system("GoPostStuff -d "+ config.usenet_dir + new_filename) # post rar n pars
+				shutil.rmtree(config.usenet_dir + new_filename) # remove files						
 
-os.remove(TMP_DIR + RUNNING)
+os.remove(config.usenet_dir + RUNNING)
 sys.exit()

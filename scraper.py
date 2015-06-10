@@ -1,10 +1,10 @@
 #! /usr/bin/python3
 import urllib.request as rq
-import re, sqlite3, os, shutil, time, sys
+import re, sqlite3, os, time, sys, config
 
-DRAMA = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_drama'
-ENT = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_ent'
-TEMP = 'http://www.torrentbest.net/bbs/board.php?bo_table=torrent_kortv_ent&page=2'
+DRAMA = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_drama'
+ENT = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_ent'
+TEMP = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_ent&page=2'
 
 def open_site(url):
 	req = rq.Request(url)
@@ -16,7 +16,6 @@ def open_site(url):
 def get_links(url):
 #	print('Getting links from: %s' % url)
 	content = open_site(url)
-	
 	link_re = re.compile(r"class=\"subject\">\s*.{0,55}wr_id=(\d{5})")
 	link_ids = re.findall(link_re,content)
 
@@ -33,7 +32,7 @@ def extract_magnet(url):
 	return torrent_hash, magnet_link
 
 def is_in_db(torrent_hash):
-	conn = sqlite3.connect('/home/***REMOVED***/downloads.db')
+	conn = sqlite3.connect(config.script_dir + '/downloads.db')
 	c = conn.cursor()
 	c.execute("SELECT * FROM downloads WHERE hash = '%s'" % torrent_hash)
 	if (c.fetchone()):		
@@ -47,8 +46,7 @@ def convert_and_move(magnet_link, torrent_hash):
 	print("Added: %s" % magnet_link)
 	os.system("deluge-console 'add %s'" % magnet_link)
 #	os.system('/home/***REMOVED***/mag2tor.sh ' + magnet_link)
-#	shutil.move('/home/***REMOVED***/meta-' + torrent_hash + '.torrent', '/home/***REMOVED***/downloads/watch/')
-	conn = sqlite3.connect('/home/***REMOVED***/downloads.db')
+	conn = sqlite3.connect(config.script_dir + '/downloads.db')
 	c = conn.cursor()
 	c.execute("INSERT INTO downloads VALUES ('%s')" % torrent_hash)
 	conn.commit()
@@ -71,6 +69,5 @@ def grab_magnets(url):
 grab_magnets(DRAMA)
 grab_magnets(ENT)
 #grab_magnets(TEMP)
-
 sys.exit()
 

@@ -2,8 +2,8 @@
 import urllib.request as rq
 import re, sqlite3, os, time, sys, config
 
-DRAMA = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_drama'
-ENT = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_ent'
+DRAMA = 'http://www.torrentlove.net/bbs/board.php?bo_table=torrent_kortv_drama'
+ENT = 'http://www.torrentlove.net/bbs/board.php?bo_table=torrent_kortv_ent'
 TEMP = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_ent&page=2'
 
 def open_site(url):

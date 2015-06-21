@@ -1,7 +1,17 @@
 #! /usr/bin/python3
-import shutil,os,re,config
+import shutil,os,re,config,sys
+
+RUNNING = 'manual.running'
+
+if (os.path.isfile(config.manual_dir + RUNNING)):
+        print('script already running, exiting')
+        sys.exit()
+
+os.system('touch ' + config.manual_dir + RUNNING)
 
 directory = os.listdir(config.manual_dir)
+if directory == []:
+	sys.exit()
 
 for filename in directory:
 	new_filename = re.sub(r"\,","",filename)
@@ -18,3 +28,6 @@ for filename in directory:
 	os.remove(config.manual_dir + foldername + "/" + new_filename) # remove video
 	os.system("GoPostStuff -d " + config.manual_dir + foldername) # post rar n pars
 	shutil.rmtree(config.manual_dir + foldername) # remove files						
+
+os.remove(config.manual_dir + RUNNING)
+

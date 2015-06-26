@@ -10,10 +10,10 @@ if (os.path.isfile(config.manual_dir + RUNNING)):
 os.system('touch ' + config.manual_dir + RUNNING)
 
 directory = os.listdir(config.manual_dir)
-if directory == []:
-	sys.exit()
 
 for filename in directory:
+	if filename == RUNNING:
+		continue
 	new_filename = re.sub(r"\,","",filename)
 	new_filename = re.sub(r"\(|\)",".",new_filename)
 	new_filename = re.sub(r" - ","-",new_filename)

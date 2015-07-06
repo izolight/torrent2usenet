@@ -18,7 +18,7 @@ for filename in directory:
 				shutil.rmtree(config.music_dir + filename + "/" + f)
 			else:
 				shutil.move(config.music_dir + filename + "/" + f, config.music_dir + f)
-		shutil.rmtree(config.music_dir + filename)
+		shutil.rmtree(config.music_dir + filename + "/")
 	if "m2u.running" in filename:
 		continue
 	else:

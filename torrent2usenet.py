@@ -37,6 +37,7 @@ for filename in directory:
 				new_filename = re.sub(r"설특선", "Lunar.New.Year.Special", new_filename)	
 				new_filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", new_filename)
 				new_filename = re.sub(r"다큐멘터리", "Documentary", new_filename)
+				new_filename = re.sub(r"감독편집판", "Directors.Cut", new_filename)
 	#			new_filename = re.sub(r"스페셜", "Special", new_filename)
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)
 				cleanname = re.sub(r"\,",".",filename)

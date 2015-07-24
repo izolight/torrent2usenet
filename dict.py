@@ -3,6 +3,10 @@ import re
 
 #Hangul to English matching
 names = {
+	"Last":re.compile(r"라스트"),
+	"Guide":re.compile(r"가이드"),
+	"City.Hall":re.compile(r"시티홀"),
+	"Almaengi":re.compile(r"알맹이"), # change to english name later
 	"SNSD.Hello.Baby":re.compile(r"소녀시대\s?헬로베이비"),
 	"Loveholic":re.compile(r"러브홀릭"),
 	"Unstoppable.High.Kick":re.compile(r"거침없이 하이킥"),

@@ -3,6 +3,28 @@ import shutil,os,re,config,sys
 
 RUNNING = 'm2u.running'
 
+def clean_names(name):
+	new_filename = re.sub(r"\,","",name)
+	new_filename = re.sub(r"\!","",new_filename)
+	new_filename = re.sub(r"\s*\(",".",new_filename)
+	new_filename = re.sub(r"\)\s*",".",new_filename)
+	new_filename = re.sub(r" - ",".",new_filename)
+	new_filename = re.sub(r"\&","+",new_filename)
+	new_filename = re.sub(r"\'","",new_filename)
+	new_filename = re.sub(r"\s",".",new_filename)
+
+	foldername = re.sub(r"\.[MP4|mp4|ts|tp|mkv|avi]$","",new_filename)
+
+	return new_filename, foldername
+
+def upload(file_name, new_name, folder_name):
+	os.mkdir(config.music_dir + folder_name)
+	shutil.move(config.music_dir + file_name, config.music_dir + folder_name + "/" + new_name)
+	os.system("rarnpar -N -D " + config.music_dir + folder_name)
+	os.remove(config.music_dir + folder_name + "/" + new_name)
+	os.system('GoPostStuff -c="/home/***REMOVED***/.gopoststuff.mv.conf" -d '+ config.music_dir + folder_name)
+	shutil.rmtree(config.music_dir + folder_name)	
+
 if (os.path.isfile(config.music_dir + RUNNING)):
         print('script already running, exiting')
         sys.exit()
@@ -17,26 +39,13 @@ for filename in directory:
 			if "Cap" in f:
 				shutil.rmtree(config.music_dir + filename + "/" + f)
 			else:
-				shutil.move(config.music_dir + filename + "/" + f, config.music_dir + f)
-		shutil.rmtree(config.music_dir + filename + "/")
-	if "m2u.running" in filename:
+				new_filename, foldername = clean_names(f)
+				upload(filename + "/" + f,new_filename,foldername)
+		shutil.rmtree(config.music_dir + filename)
+	elif "m2u.running" in filename:
 		continue
 	else:
-		new_filename = re.sub(r"\,","",filename)
-		new_filename = re.sub(r"\!","",new_filename)
-		new_filename = re.sub(r"\s*\(",".",new_filename)
-		new_filename = re.sub(r"\)\s*",".",new_filename)
-		new_filename = re.sub(r" - ",".",new_filename)
-		new_filename = re.sub(r"\&","+",new_filename)
-	#	new_filename = re.sub(r"\] ","\]",new_filename)
-		new_filename = re.sub(r"\'","",new_filename)
-		new_filename = re.sub(r"\s",".",new_filename)
-		foldername = re.sub(r"\.\w*$","",new_filename)
-		os.mkdir(config.music_dir + foldername) # make folder without file ending			
-		shutil.move(config.music_dir + filename, config.music_dir + foldername + "/" + new_filename) # move file to folder
-		os.system("rarnpar -N -D " + config.music_dir + foldername) # rar n par
-		os.remove(config.music_dir + foldername + "/" + new_filename) # remove video
-		os.system('GoPostStuff -c="/home/***REMOVED***/.gopoststuff.mv.conf" -d '+ config.music_dir + foldername) # post rar n pars
-		shutil.rmtree(config.music_dir + foldername) # remove files						
+		new_filename, foldername = clean_names(filename)
+		upload(filename,new_filename,foldername)
 
 os.remove(config.music_dir + RUNNING)

@@ -3,6 +3,8 @@ import re
 
 #Hangul to English matching
 names = {
+	"You.are.All.Surrounded":re.compile(r"너희들은 포위됐다"),
+	"CLCs.Beautiful.Mission":re.compile(r"CLC의 뷰티풀 미션"),
 	"Last":re.compile(r"라스트"),
 	"Guide":re.compile(r"가이드"),
 	"City.Hall":re.compile(r"시티홀"),
@@ -10,7 +12,7 @@ names = {
 	"SNSD.Hello.Baby":re.compile(r"소녀시대\s?헬로베이비"),
 	"Loveholic":re.compile(r"러브홀릭"),
 	"Unstoppable.High.Kick":re.compile(r"거침없이 하이킥"),
-	"Channel.SNSD":re.compile(r"채널 소녀시대"),
+	"Channel.SNSD":re.compile(r"채널 소녀시대|Channel SNSD"),
 	"TV.Novel.Dear.My.Sister":re.compile("TV소설 복희누나"),
 	"The.Kingdom.of.Wind":re.compile(r"바람의 나라"),
 	"The.Iron.Empress":re.compile(r"천추태후"),
@@ -40,7 +42,7 @@ names = {
 	"Oh.My.Lady":re.compile(r"오\! 마이 레이디"),
 	"Delightful.Girl.Choon.Hyang":re.compile(r"쾌걸춘향"),
 	"Food.Street.X.File":re.compile(r"먹거리 X파일"),
-	"Movie.Stalker":re.compile(r"무비스토커"),
+	"Movie.Stalker":re.compile(r"무비\s?스토커"),
 	"What.Are.You.Listening.to.Today":re.compile(r"오늘뭐듣지"),
 	"Sunnys.FM.Date.Viewable.Radio":re.compile(r"써니의 FM데이트 보이는 라디오"),
 	"Merchant.Kim.Man.Deok":re.compile(r"거상 김만덕"),
@@ -555,7 +557,7 @@ names = {
 	"Comedy.Big.League":re.compile(r"코미디\s*빅리그"),
 	"Smile.People":re.compile(r"웃음을 찾는 사람들"),
 	"Gag.Concert":re.compile(r"개그콘서트"),
-#	"I.Live.Alone":re.compile(r"나 혼자 산다"),
+	"I.Live.Alone":re.compile(r"나 혼자 산다"),
 	"SuperJuniorM.Guest.House":re.compile(r"슈퍼주니어M 게스트하우스"),
 	"Lets.Go.Dream.Team":re.compile(r"출발\s*드림팀"),
 	"Extreme.Surprise":re.compile(r"익스트림 서프라이즈"),

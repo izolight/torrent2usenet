@@ -1,11 +1,15 @@
 #! /usr/bin/python3
-import re, shutil, os, sys, config
+import re, shutil, os, sys, config, logging
 from dict import names
 
 RUNNING = 't2u.running'
+FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
+
+logging.basicConfig(format=FORMAT,filename='/var/log/t2u/auto.log',level=logging.DEBUG)
+logger = logging.getLogger('torrent2usenet')
 
 if (os.path.isfile(config.usenet_dir + RUNNING)):
-	print('script already running, exiting')
+	logger.warning('Script already running, exiting.')
 	sys.exit()
 
 os.system('touch ' + config.usenet_dir + RUNNING)
@@ -21,6 +25,7 @@ for filename in directory:
 	else:
 		for key in names:
 			if (re.search(names[key],filename)):
+				logger.info('Matched %s to %s' % (filename, key))
 				# convert to english
 				new_filename = re.sub(names[key],key,filename)
 				new_filename = re.sub(r"\,",".",new_filename)
@@ -48,9 +53,12 @@ for filename in directory:
 #				foldername = re.sub(r"\.\w*$","",new_filename)
 				os.mkdir(config.usenet_dir + new_filename) # make folder			
 				shutil.move(config.usenet_dir + cleanname, config.usenet_dir + new_filename) # move file to folder
+				logger.info('Running rarnpar on %s' % new_filename)	
 				os.system("rarnpar -b 2304000 -D " + config.usenet_dir + new_filename) # rar n par
 				os.remove(config.usenet_dir + new_filename + "/" + cleanname) # remove video
+				logger.info('Running GoPostStuff on %s' % new_filename)
 				os.system("GoPostStuff -d "+ config.usenet_dir + new_filename) # post rar n pars
+				logger.info('Upload finished, deleting remaining files.')
 				shutil.rmtree(config.usenet_dir + new_filename) # remove files						
 
 os.remove(config.usenet_dir + RUNNING)

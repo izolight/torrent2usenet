@@ -52,14 +52,14 @@ def convert_and_move(magnet_link, torrent_hash):
 	conn.close()
 
 def grab_magnets(url):
-	logger.info('Checking for new links in %s' % url)
+#	logger.info('Checking for new links in %s' % url)
 	link_ids = get_links(url)
 	for link_id in link_ids:
 		link = url + '&wr_id=' + link_id
-		logger.info('Link is %s' % link)
+#		logger.info('Link is %s' % link)
 		t_hash, m_link = extract_magnet(link)
 		if (is_in_db(t_hash)):
-			logger.info('Hash found in db %s moving to next URL' % t_hash)
+#			logger.info('Hash found in db %s moving to next URL' % t_hash)
 			time.sleep(3)
 			break
 		else:

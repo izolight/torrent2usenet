@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-import shutil,os,re,config,sys
+import shutil, os, re, config, sys, logging
 
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 RUNNING = 'm2u.running'
@@ -34,8 +34,8 @@ def upload(file_name, new_name, folder_name):
 	shutil.rmtree(config.music_dir + folder_name)	
 
 if (os.path.isfile(config.music_dir + RUNNING)):
-		logger.warning('Script already running, exiting')
-        sys.exit()
+	logger.warning('Script already running, exiting')
+	sys.exit()
 
 os.system('touch ' + config.music_dir + RUNNING)
 

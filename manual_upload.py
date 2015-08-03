@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-import shutil,os,re,config,sys,logging
+import shutil, os, re, config, sys, logging
 
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 RUNNING = 'manual.running'
@@ -12,7 +12,6 @@ if (os.path.isfile(config.manual_dir + RUNNING)):
 	sys.exit()
 
 os.system('touch ' + config.manual_dir + RUNNING)
-logger.info('Starting manual upload.')
 
 directory = os.listdir(config.manual_dir)
 
@@ -42,5 +41,4 @@ for filename in directory:
 	logger.info('Posted to Usenet, deleting remaining files.')
 	shutil.rmtree(config.manual_dir + foldername) # remove files						
 
-logger.info('Finished Manual Upload.')
 os.remove(config.manual_dir + RUNNING)

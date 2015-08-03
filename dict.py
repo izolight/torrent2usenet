@@ -3,6 +3,10 @@ import re
 
 #Hangul to English matching
 names = {
+	"CJ.Hellomobile.Surprise":re.compile(r"CJ 헬로모바일 슈퍼레이스"),
+	"Doll.House":re.compile(r"인형의 집"),
+	"My.Dear.Cat":re.compile(r"고양이는 있다"),
+	"Mothers.Garden":re.compile(r"엄마의 정원"),
 	"SuperClassic":re.compile(r"슈퍼클래식"),
 	"MAPS":re.compile(r"(느리게 달려야 보이는 것들 )?MAPS"),
 	"Prime.Concert":re.compile(r"프라임콘서트"),
@@ -270,7 +274,7 @@ names = {
 	"HIT.Homicide.Investigation.Team":re.compile(r"히트"),
 	"Oh.Ja.Ryong.is.Coming":re.compile(r"오자룡이 간다"),
 	"Great.Recipe":re.compile(r"대단한 레시피"),
-	"The.Returm.of.Hwang.Geum.Bok":re.compile(r"돌아온 황금복"),
+	"The.Return.of.Hwang.Geum.Bok":re.compile(r"돌아온 황금복"),
 	"High.Society":re.compile(r"상류사회"),
 	"Angels.Revenge":re.compile(r"천상여자"),
 	"Famous.Princesses":re.compile(r"소문난\.*칠공주"),
@@ -693,6 +697,7 @@ names = {
 	"Saturday.Night.Live.Korea":re.compile(r"(SNL|snl)\s*코리아"),
 	"VIXX.One.Fine.Day":re.compile(r"빅스의 어느 멋진날"),
 	"AOA.One.Fine.Day":re.compile(r"AOA\s*어느\s*멋진날"),
+	"Girls.Day.One.Fine.Day":re.compile(r"걸스데이의 어느 멋진 날"),
 	"Shin.Dong.Yups.Bachelor.Party":re.compile(r"신동엽과 총각파티"),
 	"Romantic.Show.Yesterday":re.compile(r"낭만쇼 예스터데이"),
 	"The.Golden.Bell.Challenge":re.compile(r"도전 골든벨"),

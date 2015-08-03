@@ -13,8 +13,7 @@ def clean_names(name):
 	new_filename = re.sub(r"\'","",new_filename)
 	new_filename = re.sub(r"\s",".",new_filename)
 
-	foldername = re.sub(r"\.[MP4|mp4|ts|tp|mkv|avi]$","",new_filename)
-
+	foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$","",new_filename)
 	return new_filename, foldername
 
 def upload(file_name, new_name, folder_name):

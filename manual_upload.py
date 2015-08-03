@@ -12,7 +12,7 @@ if (os.path.isfile(config.manual_dir + RUNNING)):
 	sys.exit()
 
 os.system('touch ' + config.manual_dir + RUNNING)
-logger.info('Starting manual upload')
+logger.info('Starting manual upload.')
 
 directory = os.listdir(config.manual_dir)
 

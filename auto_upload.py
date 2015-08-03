@@ -21,7 +21,6 @@ for filename in directory:
 	else:
 		for key in names:
 			if (re.search(names[key],filename)):
-				print(key)
 				# convert to english
 				new_filename = re.sub(names[key],key,filename)
 				new_filename = re.sub(r"\,",".",new_filename)

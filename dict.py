@@ -3,8 +3,9 @@ import re
 
 #Hangul to English matching
 names = {
+	"SuperClassic":re.compile(r"슈퍼클래식"),
 	"MAPS":re.compile(r"(느리게 달려야 보이는 것들 )?MAPS"),
-	"Prime.Concert":re.compile(r"라임콘서트"),
+	"Prime.Concert":re.compile(r"프라임콘서트"),
 	"Endless.Love":re.compile(r"끝없는 사랑"),
 	"Trot.Lovers":re.compile(r"트로트의 연인"),
 	"Gunman.in.Joseon":re.compile(r"조선 총잡이"),

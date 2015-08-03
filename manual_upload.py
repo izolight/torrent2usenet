@@ -9,7 +9,6 @@ logger = logging.getLogger('torrent2usenet')
 
 if (os.path.isfile(config.manual_dir + RUNNING)):
 	logger.warning('Script already running, exiting')
-#   print('script already running, exiting')
 	sys.exit()
 
 os.system('touch ' + config.manual_dir + RUNNING)

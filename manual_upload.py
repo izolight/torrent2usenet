@@ -8,7 +8,7 @@ logging.basicConfig(format=FORMAT,filename='/var/log/t2u/manual.log',level=loggi
 logger = logging.getLogger('torrent2usenet')
 
 if (os.path.isfile(config.manual_dir + RUNNING)):
-	logger.warning('Script already running, exiting')
+	logger.warning('Script already running, exiting.')
 	sys.exit()
 
 os.system('touch ' + config.manual_dir + RUNNING)

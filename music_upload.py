@@ -40,7 +40,7 @@ if (os.path.isfile(config.music_dir + RUNNING)):
 os.system('touch ' + config.music_dir + RUNNING)
 
 directory = os.listdir(config.music_dir)
-logger.info('Start uploading Musicvideos.')
+#logger.info('Start uploading Musicvideos.')
 
 for filename in directory:
 	if (os.path.isdir(os.path.join(config.music_dir, filename))):
@@ -57,5 +57,5 @@ for filename in directory:
 		new_filename, foldername = clean_names(filename)
 		upload(filename,new_filename,foldername)
 
-logger.info('Finished Music Upload.')
+#logger.info('Finished Music Upload.')
 os.remove(config.music_dir + RUNNING)

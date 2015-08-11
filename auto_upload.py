@@ -16,6 +16,52 @@ os.system('touch ' + config.usenet_dir + RUNNING)
 
 directory = os.listdir(config.usenet_dir)
 
+def find_tv_show(filename):
+	for key in names:
+		if (re.search(names[key],filename)):
+			logger.info('Matched %s to %s' % (filename, key))
+			english_name = re.sub(names[key],key,filename)
+			return english_name
+	return False
+
+def is_directory(filename):
+	if (os.path.isdir(os.path.join(config.usenet_dir, filename))):
+		return True
+	else:
+		return False
+
+def cleanup_name(filename):
+	# Remove Tags ex [MBC]
+	filename = re.sub(r"\[[^\[\]]+\]\s?", "", filename)
+	# Remove unwanted characters
+	filename = re.sub(r"「|」|\,|\'|\´|\`|\!", "", filename)
+	filename = re.sub(r" - ", "-", filename)
+	filename = re.sub(r"\&", "+", filename)
+	# Replace unwanted charaters with dots
+	filename = re.sub(r"\,|\(|\)|\s*", ".", filename)
+	return filename
+
+def translate_format(filename):
+	# Episode Numbers
+	filename = re.sub(r"(\d{1,2})부", r"E\1", filename)
+	filename = re.sub(r"(?:제)*(\d{1,3})(?:화|회)", r"E\1", filename)
+	# Season Numbers
+	filename = re.sub(r"시즌","S", filename)
+	# Special Meanings
+	filename = re.sub(r"신년특집", "New.Year.Special", filename)
+    filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
+    filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)
+    filename = re.sub(r"설특선", "Lunar.New.Year.Special", filename)
+    filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", filename)
+    filename = re.sub(r"다큐멘터리", "Documentary", filename)
+    filename = re.sub(r"감독편집판", "Directors.Cut", filename)
+	filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", filename)
+	return filename
+
+def create_foldername(filename):
+	foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$", "", filename)
+	return foldername
+
 for filename in directory:
 	if (os.path.isdir(os.path.join(config.usenet_dir, filename))):
 		if "HDione" in filename:
@@ -28,7 +74,7 @@ for filename in directory:
 				logger.info('Matched %s to %s' % (filename, key))
 				# convert to english
 				new_filename = re.sub(names[key],key,filename)
-				new_filename = re.sub(r"\[[^\[\]]+\]\s?","",new_filename) #Remove Tag ex. [MBC]
+				new_filename = re.sub(r"\[[^\[\]]+\]\s?","",new_filename) #Remove Tags ex [MBC]
 				new_filename = re.sub(r"\,|\(|\)|\s",".",new_filename) # Replace with dots
 				new_filename = re.sub(r"「|」","",new_filename)
 				new_filename = re.sub(r"\.내정보","",new_filename)
@@ -45,9 +91,9 @@ for filename in directory:
 	#			new_filename = re.sub(r"스페셜", "Special", new_filename)
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)			
 				new_filename = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$","",new_filename)
-                cleanname = re.sub(r"\[[^\[\]]+\]\s?","",filename) #Remove Tag ex. [MBC]
-                cleanname = re.sub(r"\,|\(|\)|\s",".",cleanname) # Replace with dots
-                cleanname = re.sub(r"「|」","",cleanname)
+				cleanname = re.sub(r"\[[^\[\]]+\]\s?","",filename) #Remove Tag ex. [MBC]
+				cleanname = re.sub(r"\,|\(|\)|\s",".",cleanname) # Replace with dots
+				cleanname = re.sub(r"「|」","",cleanname)
 				os.rename(config.usenet_dir + filename, config.usenet_dir + cleanname)
 #				foldername = re.sub(r"\.\w*$","",new_filename)
 				os.mkdir(config.usenet_dir + new_filename) # make folder			

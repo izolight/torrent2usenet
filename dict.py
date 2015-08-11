@@ -589,7 +589,7 @@ names = {
 #	"Law.of.the.Jungle.in.Brazil":re.compile(r"정글의 법칙 in 브라질"),
 #	"Law.of.the.Jungle.in.Indian.Ocean":re.compile(r"정글의 법칙 in 인도양"),
 	"Inkigayo":re.compile(r"인기가요"),
-	"Star.King":re.compile(r"놀라운 대회 스타킹"),
+	"Star.King":re.compile(r"놀라운 대회 스타\!?킹"),
 	"Actresses.Secret.Travel.in":re.compile(r"여우 비행 인"),
 	"Good.Sunday.K-Pop.Star":re.compile(r"(일요일이 좋다-)*K팝스타"),
 	"Good.Sunday.Running.Man":re.compile(r"(일요일이 좋다\s*-\s*)*런닝맨"),

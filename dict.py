@@ -3,6 +3,13 @@ import re
 
 #Hangul to English matching
 names = {
+	"A.New.Leaf":re.compile(r"개과천선"),
+	"Big.Man":re.compile(r"빅맨"),
+	"Miss.Mermaid":re.compile(r"인어\s?아가씨"),
+	"Something.About.1%":re.compile(r"1\%의 어떤 것"),
+	"Doctor.Stranger":re.compile(r"닥터 이방인"),
+	"You.Stole.My.Heart":re.compile(r"난 네게 반했어"),
+	"Triangle":re.compile(r"트라이앵글"),
 	"Six.Flying.Dragons":re.compile(r"육룡이 나르샤"),
 	"Yong.Pal":re.compile(r"용팔이"),
 	"I.Have.a.Lover":re.compile(r"애인 있어요"),
@@ -302,7 +309,7 @@ names = {
 	"Autumn.in.My.Heart":re.compile(r"가을동화"),
 	"Huh.Joon":re.compile(r"허준"),
 	"Horse.Doctor":re.compile(r"^마의"),
-	"Big":re.compile(r"^빅"),
+#	"Big":re.compile(r"^빅"),
 	"Comedy.Stations":re.compile(r"웃음 충전소"),
 	"Chuno":re.compile(r"추노"),
 	"Goong":re.compile(r"^궁"),
@@ -418,7 +425,6 @@ names = {
 	"K-Pop.Star":re.compile(r"케이팝스타"),
 	"Divorce.Lawyer.in.Love":re.compile(r"이혼변호사는 연애중"),
 	"A.Look.At.Myself":re.compile(r"나를 돌아봐"),
-	"Miss.Mermaid":re.compile(r"인어아가씨"),
 	"The.Three.Musketeers":re.compile(r"해외걸작드라마 삼총사"),
 	"Make.a.Woman.Cry":re.compile(r"여자를 울려"),
 	"Hilarious.Housewives":re.compile(r"태희혜교지현이"),

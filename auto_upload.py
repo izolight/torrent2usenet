@@ -28,14 +28,12 @@ for filename in directory:
 				logger.info('Matched %s to %s' % (filename, key))
 				# convert to english
 				new_filename = re.sub(names[key],key,filename)
-				new_filename = re.sub(r"\,",".",new_filename)
-				new_filename = re.sub(r"\(|\)",".",new_filename)
-				new_filename = re.sub(r"\[.?\]\s*","",new_filename)
+				new_filename = re.sub(r"\[[^\[\]]+\]\s?","",new_filename) #Remove Tag ex. [MBC]
+				new_filename = re.sub(r"\,|\(|\)|\s",".",new_filename) # Replace with dots
+				new_filename = re.sub(r"「|」","",new_filename)
 				new_filename = re.sub(r"\.내정보","",new_filename)
-				new_filename = re.sub(r"\s",".",new_filename)
 				new_filename = re.sub(r"(\d{1,2})부", r"E\1", new_filename)
 				new_filename = re.sub(r"(?:제)*(\d{1,3})(?:화|회)", r"E\1", new_filename)
-				new_filename = re.sub(r"0{3}?(\d{2})\_2M", r"E\1", new_filename)
 				new_filename = re.sub(r"시즌","S", new_filename)
 				new_filename = re.sub(r"신년특집", "New.Year.Special", new_filename)
 				new_filename = re.sub(r"설날특집", "Lunar.New.Year.Special", new_filename)
@@ -46,9 +44,10 @@ for filename in directory:
 				new_filename = re.sub(r"감독편집판", "Directors.Cut", new_filename)
 	#			new_filename = re.sub(r"스페셜", "Special", new_filename)
 				new_filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", new_filename)			
-				cleanname = re.sub(r"\,",".",filename)
-				cleanname = re.sub(r"[\(|\)]",".",cleanname)
-				cleanname = re.sub(r"[\「|\」]","",cleanname)
+				new_filename = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$","",new_filename)
+                cleanname = re.sub(r"\[[^\[\]]+\]\s?","",filename) #Remove Tag ex. [MBC]
+                cleanname = re.sub(r"\,|\(|\)|\s",".",cleanname) # Replace with dots
+                cleanname = re.sub(r"「|」","",cleanname)
 				os.rename(config.usenet_dir + filename, config.usenet_dir + cleanname)
 #				foldername = re.sub(r"\.\w*$","",new_filename)
 				os.mkdir(config.usenet_dir + new_filename) # make folder			

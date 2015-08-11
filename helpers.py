@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-import re, shutil, os, sys, config, logging
+import re, shutil, os, sys, logging
 from dict import names
 
 RUNNING = 'running'
@@ -10,14 +10,14 @@ def setup_logger(dir_name):
 	logger = logging.getLogger('torrent2usenet')
 	return logger
 
-def is_running(path):
+def is_running(path, logger):
 	if (os.path.isfile(path + RUNNING)):
 		logger.warning('Script already running, exiting.')
 		sys.exit()
 	else:
 		os.system('touch ' + path + RUNNING)	
 
-def find_tv_show(filename):
+def find_tv_show(filename, logger):
 	for key in names:
 		if (re.search(names[key],filename)):
 			logger.info('Matched %s to %s' % (filename, key))
@@ -39,7 +39,7 @@ def cleanup_name(filename):
 	filename = re.sub(r" - ", "-", filename)
 	filename = re.sub(r"\&", "+", filename)
 	# Replace unwanted charaters with dots
-	filename = re.sub(r"\,|\(|\)|\s*", ".", filename)
+	filename = re.sub(r"\,|\(|\)|\s+", ".", filename)
 	return filename
 
 def translate_format(filename):
@@ -50,12 +50,12 @@ def translate_format(filename):
 	filename = re.sub(r"시즌","S", filename)
 	# Special Meanings
 	filename = re.sub(r"신년특집", "New.Year.Special", filename)
-    filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
-    filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)
-    filename = re.sub(r"설특선", "Lunar.New.Year.Special", filename)
-    filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", filename)
-    filename = re.sub(r"다큐멘터리", "Documentary", filename)
-    filename = re.sub(r"감독편집판", "Directors.Cut", filename)
+	filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
+	filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)
+	filename = re.sub(r"설특선", "Lunar.New.Year.Special", filename)
+	filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", filename)
+	filename = re.sub(r"다큐멘터리", "Documentary", filename)
+	filename = re.sub(r"감독편집판", "Directors.Cut", filename)
 	filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", filename)
 	return filename
 
@@ -63,14 +63,14 @@ def create_foldername(filename):
 	foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$", "", filename)
 	return foldername
 
-def upload(filename, path, configfile):
+def upload(originalname, filename, path, logger):
 	foldername = create_foldername(filename)
 	os.mkdir(path + foldername)
-	shutil.move(path + filename, path + foldername + "/" + filename)
+	shutil.move(path + originalname, path + foldername + "/" + originalname)
 	logger.info('Starting rarnpar on %s' % foldername)
 	os.system('rarnpar -N -D ' + path + foldername)
-	os.remove(path + foldername + "/" + filename)
+	os.remove(path + foldername + "/" + originalname)
 	logger.info('Starting GoPostStuff on %s' % foldername)
-	os.system('GoPostStuff -c"' + configfile + '" -d ' + path + foldername)
+	os.system('GoPostStuff -d ' + path + foldername)
 	logger.info('Upload finished, deleting remaining files.')
 	shutil.rmtree(path + foldername)

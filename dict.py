@@ -3,6 +3,12 @@ import re
 
 #Hangul to English matching
 names = {
+	"Get.it.Beauty":re.compile(r"Get it Beauty"),
+	"Yetti.TV":re.compile(r"예띠 TV"),
+	"Immortal.Songs":re.compile(r"불후의 명곡"),
+	"I.am.Kim.So.Jung":re.compile(r"아임 김소정"),
+	"Rude.Miss.Young.Ae":re.compile(r"막돼먹은 영애씨"),
+	"18.Seconds":re.compile(r"18초"),
 	"A.New.Leaf":re.compile(r"개과천선"),
 	"Big.Man":re.compile(r"빅맨"),
 	"Miss.Mermaid":re.compile(r"인어\s?아가씨"),
@@ -60,7 +66,7 @@ names = {
 	"SNSD.Hello.Baby":re.compile(r"소녀시대\s?헬로베이비"),
 	"Loveholic":re.compile(r"러브홀릭"),
 	"Unstoppable.High.Kick":re.compile(r"거침없이 하이킥"),
-	"Channel.SNSD":re.compile(r"채널 소녀시대|Channel SNSD"),
+	"Channel.SNSD":re.compile(r"(채널|Channel)\s?(소녀시대|소시|SNSD)"),
 	"TV.Novel.Dear.My.Sister":re.compile("TV소설 복희누나"),
 	"The.Kingdom.of.Wind":re.compile(r"바람의 나라"),
 	"The.Iron.Empress":re.compile(r"천추태후"),
@@ -599,7 +605,7 @@ names = {
 	"Our.Sunday.Night.Daddy.Where.Are.You.Going":re.compile(r"(일밤 1부 )*아빠\!* 어디가"),
 	"Our.Sunday.Night.Real.Man":re.compile(r"(일밤 2부 )*진짜\s*사나이"),
 	"Our.Sunday.Night.Animals":re.compile(r"일밤 1부 애니멀즈"),
-	"Saturday.Freedom.Immortal.Music":re.compile(r"불후의 명곡 전설을 노래하다"),
+#	"Saturday.Freedom.Immortal.Music":re.compile(r"불후의 명곡 전설을 노래하다"),
 	"Happy.Sunday.2Days.1Night":re.compile(r"(해피\s*선데이\s*-\s*)*1박2일"),
 	"Comedy.Big.League":re.compile(r"코미디\s*빅리그"),
 	"Smile.People":re.compile(r"웃음을 찾는 사람들"),

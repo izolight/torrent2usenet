@@ -28,6 +28,8 @@ def find_tv_show(filename, logger):
 def is_directory(path, filename):
 	if (os.path.isdir(os.path.join(path, filename))):
 		return True
+	if filename == 'running':
+		return True
 	else:
 		return False
 

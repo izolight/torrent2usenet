@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-import shutil, os, re, config, sys, logging
+import shutil, os, re, config, sys, logging, helpers
 
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 RUNNING = 'manual.running'
@@ -18,6 +18,9 @@ directory = os.listdir(config.manual_dir)
 for filename in directory:
 	if filename == RUNNING:
 		continue
+	if helpers.is_directory(config.manual_dir, filename):
+		continue
+
 	logger.info('Processing %s' % filename)
 
 	new_filename = re.sub(r"\,","",filename)
@@ -34,10 +37,10 @@ for filename in directory:
 	shutil.move(config.manual_dir + filename, config.manual_dir + foldername + "/" + new_filename) # move file to folder
 	
 	logger.info('Starting rarnpar on %s' % foldername)
-	os.system("rarnpar -b 2304000 -N -D " + config.manual_dir + foldername) # rar n par	
+	os.system("rarnpar -D " + config.manual_dir + foldername) # rar n par	
 	os.remove(config.manual_dir + foldername + "/" + new_filename) # remove video
 	logger.info('Starting GoPostStuff on %s' % foldername)
-	os.system("GoPostStuff -d " + config.manual_dir + foldername) # post rar n pars
+	os.system('GoPostStuff-newsoo -c="/home/***REMOVED***/.newsoo.gopoststuff.conf" -d ' + config.manual_dir + foldername) # post rar n pars
 	logger.info('Posted to Usenet, deleting remaining files.')
 	shutil.rmtree(config.manual_dir + foldername) # remove files						
 

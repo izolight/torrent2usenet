@@ -71,4 +71,3 @@ grab_magnets(DRAMA)
 grab_magnets(ENT)
 #grab_magnets(TEMP)
 sys.exit()
-

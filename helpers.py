@@ -51,6 +51,7 @@ def translate_format(filename):
 	# Season Numbers
 	filename = re.sub(r"시즌","S", filename)
 	# Special Meanings
+	filename = re.sub(r"페스티벌", "Festival", filename)
 	filename = re.sub(r"신년특집", "New.Year.Special", filename)
 	filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
 	filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)
@@ -62,7 +63,7 @@ def translate_format(filename):
 	return filename
 
 def create_foldername(filename):
-	foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi)$", "", filename)
+	foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv)$", "", filename)
 	return foldername
 
 def upload(originalname, filename, path, logger):

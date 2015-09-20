@@ -9,13 +9,13 @@ def upload(originalname, filename, path, logger, configfile):
 	os.system('rarnpar -N -D ' + path + foldername)
 	os.remove(path + foldername + "/" + originalname)
 	logger.info('Starting GoPostStuff on %s' % foldername)
-	os.system('GoPostStuff -c="' + configfile + '" -d ' + path + foldername)
+	os.system('GoPostStuff-newsoo -c="' + configfile + '" -d ' + path + foldername)
 	logger.info('Upload finished, deleting remaining files.')
 	shutil.rmtree(path + foldername)
 
 if __name__ == "__main__":
 	path = config.movie_dir
-	configfile = '/home/***REMOVED***/.gopoststuff.movies.conf'
+	configfile = '/home/***REMOVED***/.newsoo.movie.gopoststuff.conf'
 	pathname = re.findall(r"\/(\w+)", path)[-1]
 	logger = helpers.setup_logger(pathname)
 	helpers.is_running(path, logger)

@@ -3,9 +3,9 @@ import urllib.request as rq
 import re, sqlite3, os, time, sys, config, logging
 
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
-DRAMA = 'http://www.torrentlove.net/bbs/board.php?bo_table=torrent_kortv_drama'
-ENT = 'http://www.torrentlove.net/bbs/board.php?bo_table=torrent_kortv_ent'
-TEMP = 'http://www.tosarang.net/bbs/board.php?bo_table=torrent_kortv_ent&page=2'
+DRAMA = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_drama'
+ENT = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_ent'
+TEMP = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social&page=4'
 
 logging.basicConfig(format=FORMAT,filename='/var/log/t2u/scraper.log',level=logging.DEBUG)
 logger = logging.getLogger('torrent2usenet')
@@ -19,7 +19,7 @@ def open_site(url):
 
 def get_links(url):
 	content = open_site(url)
-	link_re = re.compile(r"class=\"subject\">\s*.{0,55}wr_id=(\d{5})")
+	link_re = re.compile(r"class=\"subject\">\s*.+?wr_id=(\d{5})")
 	link_ids = re.findall(link_re,content)
 
 	return link_ids
@@ -53,10 +53,12 @@ def convert_and_move(magnet_link, torrent_hash):
 
 def grab_magnets(url):
 #	logger.info('Checking for new links in %s' % url)
+#	print(url)
 	link_ids = get_links(url)
 	for link_id in link_ids:
 		link = url + '&wr_id=' + link_id
 #		logger.info('Link is %s' % link)
+#		print(link_id)
 		t_hash, m_link = extract_magnet(link)
 		if (is_in_db(t_hash)):
 #			logger.info('Hash found in db %s moving to next URL' % t_hash)
@@ -69,5 +71,4 @@ def grab_magnets(url):
 
 grab_magnets(DRAMA)
 grab_magnets(ENT)
-#grab_magnets(TEMP)
-sys.exit()
+grab_magnets(TEMP)

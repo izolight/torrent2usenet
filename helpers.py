@@ -48,9 +48,11 @@ def translate_format(filename):
 	# Episode Numbers
 	filename = re.sub(r"(\d{1,2})부", r"E\1", filename)
 	filename = re.sub(r"(?:제)*(\d{1,3})(?:화|회)", r"E\1", filename)
+	filename = re.sub(r"_0+(\d+)_2M", r".E\1", filename)
 	# Season Numbers
 	filename = re.sub(r"시즌","S", filename)
 	# Special Meanings
+	filename = re.sub(r"플러스", "Plus", filename)
 	filename = re.sub(r"페스티벌", "Festival", filename)
 	filename = re.sub(r"신년특집", "New.Year.Special", filename)
 	filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)

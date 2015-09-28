@@ -54,6 +54,7 @@ def translate_format(filename):
 	# Special Meanings
 	filename = re.sub(r"플러스", "Plus", filename)
 	filename = re.sub(r"페스티벌", "Festival", filename)
+	filename = re.sub(r"추석특집", "Chuseok.Special", filename)
 	filename = re.sub(r"신년특집", "New.Year.Special", filename)
 	filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
 	filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)

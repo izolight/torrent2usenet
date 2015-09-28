@@ -5,7 +5,7 @@ import re, sqlite3, os, time, sys, config, logging
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 DRAMA = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_drama'
 ENT = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_ent'
-TEMP = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social&page=4'
+TEMP = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social'
 
 logging.basicConfig(format=FORMAT,filename='/var/log/t2u/scraper.log',level=logging.DEBUG)
 logger = logging.getLogger('torrent2usenet')

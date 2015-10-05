@@ -40,7 +40,8 @@ for filename in directory:
 	os.system("rarnpar -D " + config.manual_dir + foldername) # rar n par	
 	os.remove(config.manual_dir + foldername + "/" + new_filename) # remove video
 	logger.info('Starting GoPostStuff on %s' % foldername)
-	os.system('GoPostStuff-newsoo -c="/home/***REMOVED***/.newsoo.gopoststuff.conf" -d ' + config.manual_dir + foldername) # post rar n pars
+	os.system('GoPostStuff -d ' + config.manual_dir + foldername) # post rar n pars
+#	os.system('GoPostStuff-newsoo -c="/home/***REMOVED***/.newsoo.gopoststuff.conf" -d ' + config.manual_dir + foldername) # post rar n pars
 	logger.info('Posted to Usenet, deleting remaining files.')
 	shutil.rmtree(config.manual_dir + foldername) # remove files						
 

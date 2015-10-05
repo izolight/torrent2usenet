@@ -5,7 +5,7 @@ import re, sqlite3, os, time, sys, config, logging
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 DRAMA = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_drama'
 ENT = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_ent'
-TEMP = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social'
+DOCU = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social'
 
 logging.basicConfig(format=FORMAT,filename='/var/log/t2u/scraper.log',level=logging.DEBUG)
 logger = logging.getLogger('torrent2usenet')
@@ -19,7 +19,7 @@ def open_site(url):
 
 def get_links(url):
 	content = open_site(url)
-	link_re = re.compile(r"class=\"subject\">\s*.+?wr_id=(\d{5})")
+	link_re = re.compile(r"class=\"td_subject\">\s*.+?wr_id=(\d{5})")
 	link_ids = re.findall(link_re,content)
 
 	return link_ids
@@ -71,4 +71,4 @@ def grab_magnets(url):
 
 grab_magnets(DRAMA)
 grab_magnets(ENT)
-grab_magnets(TEMP)
+grab_magnets(DOCU)

@@ -6,7 +6,7 @@ RUNNING = 'running'
 FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 
 def setup_logger(dir_name):
-	logging.basicConfig(format=FORMAT, filename='/var/log/t2u/'+dir_name, level=logging.DEBUG)
+	logging.basicConfig(format=FORMAT, filename='/var/log/t2u/'+dir_name+'.log', level=logging.DEBUG)
 	logger = logging.getLogger('torrent2usenet')
 	return logger
 
@@ -42,6 +42,9 @@ def cleanup_name(filename):
 	filename = re.sub(r"\&", "+", filename)
 	# Replace unwanted charaters with dots
 	filename = re.sub(r"\,|\(|\)|\s+", ".", filename)
+	# Replace all multiple occurences of dots with just one
+	filename = re.sub(r"\.+", ".", filename)
+	filename = re.sub(r"\.-\.", "-", filename)
 	return filename
 
 def translate_format(filename):

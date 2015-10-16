@@ -31,7 +31,7 @@ names = {
 #	"Special.Docu.Rediscovery.of.the.Forest":re.compile(r"특집다큐 숲의 재발견"),
 	"The.20th.Busan.International.Fiml.Festival.Opening.Ceremony":re.compile(r"제20회 부산국제영화제 개막식"),
 	"Emperor.of.the.Sea":re.compile(r"해신"),
-	"The.Village":re.compile(r"마을"),
+	"The.Village.Achiaras.Secret":re.compile(r"마을 (- )?아치아라의 비밀"),
 	"Six.Flying.Dragons":re.compile(r"육룡이 나르샤"),
 	"Sassy.Go.Go":re.compile(r"발칙하게 고고"),
 	"Glamorous.Temptation":re.compile(r"화려한 유혹"),

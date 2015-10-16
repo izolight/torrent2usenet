@@ -1,5 +1,6 @@
 #! /usr/bin/python3
 import re, logging, os, sys, shutil
+from multiprocessing import Process
 import config
 from dict import names
 
@@ -79,7 +80,7 @@ class Uploader:
         return filename
         
     def generate_foldername(self, filename):
-        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv)$", "", filename)
+        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|m2t)$", "", filename)
         return foldername
     
     def move_files(self, originalname, foldername):
@@ -99,12 +100,21 @@ class Uploader:
         self.logger.info('Upload finished, deleting remaining files.')
         shutil.rmtree(self.path + foldername)
 
-    def process(self, tv=True):
+    def process(self, tv=False, music=False):
         self.setup_logger()
         self.is_running()
         for item in self.items:
             if self.is_directory(item):
-                continue
+                if music:
+                    for f in os.listdir(os.path.join(self.path, item)):
+                        if "Cap" in f:
+                            shutil.rmtree(self.path + item + "/" + f)
+                        else:
+                            shutil.move(self.path + item + "/" + f, self.path + f)
+                    shutil.rmtree(self.path + item)
+                    continue
+                else:
+                    continue
             if tv:
                 filename = self.find_tv_show(item)
             else:
@@ -122,8 +132,14 @@ class Uploader:
 
 if __name__ == "__main__":
     tv_uploader = Uploader(config.tv)
-    tv_uploader.process()
+    p1 = Process(target=tv_uploader.process, kwargs={'tv':True})
     movie_uploader = Uploader(config.movie)
-    movie_uploader.process(tv=False)
+    p2 = Process(target=movie_uploader.process)
     music_uploader = Uploader(config.music)
-    music_uploader.process(tv=False)
+    p3 = Process(target=music_uploader.process, kwargs={'music':True})
+    manual_uploader = Uploader(config.manual)
+    p4 = Process(target=manual_uploader.process)
+    p1.start()
+    p2.start()
+    p3.start()
+    p4.start()

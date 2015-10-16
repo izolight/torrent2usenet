@@ -2,14 +2,10 @@
 import os
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-config_file = '/home/***REMOVED***/sample.conf'
+config_file = '/home/***REMOVED***/.gopoststuff.conf'
 nzb_path = '/home/***REMOVED***/nzb/'
 
 base_dir = '/home/***REMOVED***/post_to_usenet/'
-usenet_dir = base_dir +'auto/'
-manual_dir = base_dir + 'manual/' # no rename
-music_dir = base_dir + 'music/' # different Group
-movie_dir = base_dir + 'movies/' # different Group
 
 tv = {
     'dir': base_dir+'tv/',
@@ -35,4 +31,11 @@ music = {
     'server': '***REMOVED***',
     'host': 'newsoo.fr',
 }
-
+manual = {
+    'dir': base_dir+'manual/',
+    'prefix': '[***REMOVED***]',
+    'from': '***REMOVED*** <***REMOVED***>',
+    'group': 'alt.binaries.multimedia.korean',
+    'server': 'newsoo',
+    'host': 'newsoo.fr',
+}

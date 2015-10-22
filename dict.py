@@ -3,6 +3,17 @@ import re
 
 #Hangul to English matching
 names = {
+    "Grandma.Your.Robot":re.compile(r"할매네 로봇"),
+    "Chicken.Surfing":re.compile(r"닭치고 서핑"),
+    "Chinese.Cuisine.Showdown":re.compile(r"강호대결 중화대반점"),
+    "Addressing.an.Issue.to.a.Jedi":re.compile(r"제다이 제대로 다루는 이슈"),
+    "Discovery.of.Life":re.compile(r"생활의발견"),
+    "KBS.Reserve":re.compile(r"여유만만"), # http://www.kbs.co.kr/2tv/enter/reserve/
+    "The.Road.to.Real.Autonomy":re.compile(r"진정한 주민자치의 길"),
+    "Review.US.Energy.System":re.compile(r"다시 보는 미국 에너지 시스템"),
+    "Fists.of.Shaolin.Temple":re.compile(r"주먹쥐고 소림사"),
+    "The.Rallyist":re.compile(r"더 랠리스트"),
+    "Korean.Geographic":re.compile(r"코리언 지오그래픽"),
 	"Good.Morning":re.compile(r"좋은아침"),
 	"World.News":re.compile(r"지구촌뉴스"),
 	"Hi.Korean":re.compile(r"안녕 우리말"),
@@ -207,6 +218,7 @@ names = {
 	"A.Tale.of.Two.Sisters":re.compile(r"지성이면 감천"),
 	"To.Be.Continued":re.compile(r"투 비 컨티뉴드"),
 	"To.You.Project.Finding.Sugarman":re.compile(r"투유 프로젝트 (\-\s)?슈가맨을 찾아서"),
+    "To.You.Project.Sugarman":re.compile(r"투유 프로젝트 슈가맨"),
 	"Ace":re.compile(r"에이스"),
 	"Among.Chefs":re.compile(r"셰프끼리"),
 	"The.Heirs":re.compile(r"상속자들"),
@@ -970,7 +982,7 @@ names = {
 	"The.Golden.Bell.Challenge":re.compile(r"도전 골든벨"),
 	"Star.Golden.Bell":re.compile(r"스타 골든벨"),
 	"Code.Zero":re.compile(r"코드제로"),
-	"Challenge.1000.Songs":re.compile(r"도전 1000곡"),
+	"Challenge.1000.Songs":re.compile(r"도전\s?1000곡"),
 	"A.Dinner.Of.Fisherman":re.compile(r"어부의\s*만찬"),
 	"Burning.Youth":re.compile(r"불타는 청춘"),
 	"Mystery.Music.Show.Mask.King":re.compile(r"(미스터리 음악쇼 )*복면가왕"),

@@ -12,7 +12,7 @@ tv = {
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.tv',
-    'server': '***REMOVED***',
+    'server': 'newsoo',
     'host': 'newsoo.fr',
 }
 movie = {
@@ -28,7 +28,7 @@ music = {
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.music.videos',
-    'server': '***REMOVED***',
+    'server': 'newsoo',
     'host': 'newsoo.fr',
 }
 manual = {
@@ -36,6 +36,14 @@ manual = {
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'alt.binaries.multimedia.korean',
+    'server': 'newsoo',
+    'host': 'newsoo.fr',
+}
+jap = {
+    'dir': base_dir+'jap/',
+    'prefix': '[***REMOVED***]',
+    'from': '***REMOVED*** <***REMOVED***>',
+    'group': 'alt.binaries.multimedia.japanese',
     'server': 'newsoo',
     'host': 'newsoo.fr',
 }

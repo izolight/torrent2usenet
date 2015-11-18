@@ -24,7 +24,7 @@ movie = {
     'host': 'newsoo.fr',
 }
 music = {
-    'dir': base_dir+'music/',
+    'dir': base_dir+'mv/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.music.videos',
@@ -47,3 +47,20 @@ jap = {
     'server': 'newsoo',
     'host': 'newsoo.fr',
 }
+album = {
+    'dir': base_dir+'music/album/',
+    'prefix': '[***REMOVED***]',
+    'from': '***REMOVED*** <***REMOVED***>',
+    'group': 'alt.binaries.multimedia.korean',
+    'server': 'newsoo',
+    'host': 'newsoo.fr',
+}
+single = {
+    'dir': base_dir+'music/single/',
+    'prefix': '[***REMOVED***]',
+    'from': '***REMOVED*** <***REMOVED***>',
+    'group': 'alt.binaries.multimedia.korean',
+    'server': 'newsoo',
+    'host': 'newsoo.fr',
+}
+

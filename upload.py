@@ -46,7 +46,7 @@ class Uploader:
 
     def cleanup_name(self,filename):
         # Remove Tags ex [MBC]
-        filename = re.sub(r"\[[^\[\]]+\]\s?", "", filename)
+        filename = re.sub(r"\[.+?\]\s?", "", filename)
         # Remove unwanted characters
         filename = re.sub(r"「|」|\,|\'|\´|\`|\!", "", filename)
         filename = re.sub(r" - ", "-", filename)
@@ -77,10 +77,13 @@ class Uploader:
         filename = re.sub(r"다큐멘터리", "Documentary", filename)
         filename = re.sub(r"감독편집판", "Directors.Cut", filename)
         filename = re.sub(r"TV\.*문\.*학\.*관", "TV.Feature", filename)
+        filename = re.sub(r"현장 스토리", "Behind.the.Scenes", filename)
         return filename
         
-    def generate_foldername(self, filename):
+    def generate_foldername(self, filename, tv):
         foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|m2t)$", "", filename)
+        if tv:
+            foldername = re.sub(r"[^\w]{2,}", ".", foldername)
         return foldername
     
     def move_files(self, originalname, foldername):
@@ -91,7 +94,7 @@ class Uploader:
 
     def rarnpar(self, foldername):
         self.logger.info('Starting rarnpar on %s' % foldername)
-        os.system('rarnpar -D ' + self.path + foldername)
+        os.system('rarnpar -n -D ' + self.path + foldername)
 
     def upload(self, foldername):
         self.logger.info('Starting GoPostStuff on %s' % foldername)
@@ -100,12 +103,12 @@ class Uploader:
         self.logger.info('Upload finished, deleting remaining files.')
         shutil.rmtree(self.path + foldername)
 
-    def process(self, tv=False, music=False):
+    def process(self, tv=False, mv=False):
         self.setup_logger()
         self.is_running()
         for item in self.items:
             if self.is_directory(item):
-                if music:
+                if mv:
                     for f in os.listdir(os.path.join(self.path, item)):
                         if "Cap" in f:
                             shutil.rmtree(self.path + item + "/" + f)
@@ -123,7 +126,7 @@ class Uploader:
                 continue
             filename = self.cleanup_name(filename)
             filename = self.translate_format(filename)
-            foldername = self.generate_foldername(filename)
+            foldername = self.generate_foldername(filename, tv)
             cleanedname = self.move_files(item, foldername)
             self.rarnpar(foldername)
             os.remove(self.path + foldername + "/" + cleanedname)
@@ -136,7 +139,7 @@ if __name__ == "__main__":
     movie_uploader = Uploader(config.movie)
     p2 = Process(target=movie_uploader.process)
     music_uploader = Uploader(config.music)
-    p3 = Process(target=music_uploader.process, kwargs={'music':True})
+    p3 = Process(target=music_uploader.process, kwargs={'mv':True})
     manual_uploader = Uploader(config.manual)
     p4 = Process(target=manual_uploader.process)
     jap_uploader = Uploader(config.jap)

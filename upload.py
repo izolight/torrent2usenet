@@ -103,7 +103,7 @@ class Uploader:
         self.logger.info('Upload finished, deleting remaining files.')
         shutil.rmtree(self.path + foldername)
 
-    def process(self, tv=False, mv=False):
+    def process(self, tv=False, mv=False, music=False):
         self.setup_logger()
         self.is_running()
         for item in self.items:
@@ -115,6 +115,12 @@ class Uploader:
                         else:
                             shutil.move(self.path + item + "/" + f, self.path + f)
                     shutil.rmtree(self.path + item)
+                    continue
+                if music:
+                    new_name = self.cleanup_name(item)
+                    shutil.move(self.path + item, self.path + new_name)
+                    os.system("par2create -R " + new_name + "/*")
+                    self.upload(new_name)
                     continue
                 else:
                     continue
@@ -144,8 +150,15 @@ if __name__ == "__main__":
     p4 = Process(target=manual_uploader.process)
     jap_uploader = Uploader(config.jap)
     p5 = Process(target=jap_uploader.process)
+    album_up = Uploader(config.album)
+    p6 = Process(target=album_up.process, kwargs={'music':True})
+    single_up = Uploader(config.single)
+    p7 = Process(target=single_up.process, kwargs={'music':True})
+
     p1.start()
     p2.start()
     p3.start()
     p4.start()
     p5.start()
+    p6.start()
+    p7.start()

@@ -12,7 +12,7 @@ tv = {
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.tv',
-    'server': '***REMOVED***',
+    'server': 'newsoo',
     'host': 'newsoo.fr',
 }
 movie = {

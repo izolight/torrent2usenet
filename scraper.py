@@ -6,6 +6,8 @@ FORMAT = '%(asctime)s %(levelname)-8s %(message)s'
 DRAMA = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_drama'
 ENT = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_ent'
 DOCU = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_kortv_social'
+MOVIES = 'http://www.tobest2.net/bbs/board.php?bo_table=torrent_movie_kor'
+#F_TV = 'http://www.tosarang2.net/bbs/board.php?bo_table=torrent_engtv_drama'
 
 logging.basicConfig(format=FORMAT,filename='/var/log/t2u/scraper.log',level=logging.DEBUG)
 logger = logging.getLogger('torrent2usenet')
@@ -19,7 +21,7 @@ def open_site(url):
 
 def get_links(url):
 	content = open_site(url)
-	link_re = re.compile(r"class=\"td_subject\">\s*.+?wr_id=(\d{5})")
+	link_re = re.compile(r"class=\"td_subject\">\s*.+?wr_id=(\d{1,6})")
 	link_ids = re.findall(link_re,content)
 
 	return link_ids
@@ -43,15 +45,19 @@ def is_in_db(torrent_hash):
 	conn.close()
 	return False
 
-def convert_and_move(magnet_link, torrent_hash):
-	os.system("deluge-console 'add %s'" % magnet_link)
+def convert_and_move(magnet_link, torrent_hash,deluge=True,folder='movies'):
+	if deluge:
+		os.system("deluge-console 'add %s'" % magnet_link)
+	else:
+		os.system("/home/***REMOVED***/torrent2usenet/mag2tor.sh '%s' /opt/rtorrent/watch/%s" % (magnet_link,folder))
+
 	conn = sqlite3.connect(config.script_dir + '/downloads.db')
 	c = conn.cursor()
 	c.execute("INSERT INTO downloads VALUES ('%s')" % torrent_hash)
 	conn.commit()
 	conn.close()
 
-def grab_magnets(url):
+def grab_magnets(url, deluge=True, folder='movies'):
 #	logger.info('Checking for new links in %s' % url)
 #	print(url)
 	link_ids = get_links(url)
@@ -66,9 +72,11 @@ def grab_magnets(url):
 			break
 		else:
 			logger.info('Adding magnet to deluge %s' % m_link)
-			convert_and_move(m_link, t_hash)
+			convert_and_move(m_link, t_hash, deluge, folder)
 			time.sleep(3)
 
 grab_magnets(DRAMA)
 grab_magnets(ENT)
 grab_magnets(DOCU)
+grab_magnets(MOVIES, False, 'movies')
+#grab_magnets(F_TV, False, 'tv')

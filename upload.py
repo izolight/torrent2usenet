@@ -71,8 +71,8 @@ class Uploader:
         filename = re.sub(r"추석특집", "Chuseok.Special", filename)
         filename = re.sub(r"신년특집", "New.Year.Special", filename)
         filename = re.sub(r"설날특집", "Lunar.New.Year.Special", filename)
-        filename = re.sub(r"설 특집", "Lunar.New.Year.Special", filename)
-        filename = re.sub(r"설특선", "Lunar.New.Year.Special", filename)
+        filename = re.sub(r"설\s?특집", "Lunar.New.Year.Special", filename)
+        filename = re.sub(r"설\s?특선", "Lunar.New.Year.Special", filename)
         filename = re.sub(r"드라마\.*\s*스페셜", "Drama.Special", filename)
         filename = re.sub(r"다큐멘터리", "Documentary", filename)
         filename = re.sub(r"감독편집판", "Directors.Cut", filename)
@@ -81,7 +81,7 @@ class Uploader:
         return filename
         
     def generate_foldername(self, filename, tv):
-        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|m2t)$", "", filename)
+        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|m2ts?)$", "", filename)
         if tv:
             foldername = re.sub(r"[^\w]{2,}", ".", foldername)
         return foldername

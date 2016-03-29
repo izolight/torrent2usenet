@@ -81,7 +81,7 @@ class Uploader:
         return filename
         
     def generate_foldername(self, filename, tv):
-        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|m2ts?)$", "", filename)
+        foldername = re.sub(r"\.(MP4|mp4|ts|tp|mkv|avi|wmv|srt|m2ts?)$", "", filename)
         if tv:
             foldername = re.sub(r"[^\w]{2,}", ".", foldername)
         return foldername
@@ -134,8 +134,9 @@ class Uploader:
             filename = self.translate_format(filename)
             foldername = self.generate_foldername(filename, tv)
             cleanedname = self.move_files(item, foldername)
-            self.rarnpar(foldername)
-            os.remove(self.path + foldername + "/" + cleanedname)
+            if not filename.endswith('srt'):
+                self.rarnpar(foldername)
+                os.remove(self.path + foldername + "/" + cleanedname)
             self.upload(foldername)
         os.remove(self.path + self.RUNNING)
 

@@ -12,55 +12,55 @@ tv = {
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.tv',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 movie = {
     'dir': base_dir+'movies/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.movies',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 music = {
     'dir': base_dir+'mv/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'korea.binaries.music.videos',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 manual = {
     'dir': base_dir+'manual/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'alt.binaries.multimedia.korean',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 jap = {
     'dir': base_dir+'jap/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'alt.binaries.multimedia.japanese',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 album = {
     'dir': base_dir+'music/album/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'alt.binaries.multimedia.korean',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 single = {
     'dir': base_dir+'music/single/',
     'prefix': '[***REMOVED***]',
     'from': '***REMOVED*** <***REMOVED***>',
     'group': 'alt.binaries.multimedia.korean',
-    'server': 'newsoo',
-    'host': 'newsoo.fr',
+    'server': '***REMOVED***',
+    'host': '***REMOVED***.com',
 }
 

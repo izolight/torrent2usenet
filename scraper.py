@@ -77,6 +77,6 @@ def grab_magnets(url, deluge=True, folder='movies'):
 
 grab_magnets(DRAMA)
 grab_magnets(ENT)
-grab_magnets(DOCU)
+#grab_magnets(DOCU)
 grab_magnets(MOVIES, False, 'movies')
 #grab_magnets(F_TV, False, 'tv')

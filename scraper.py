@@ -49,7 +49,7 @@ def convert_and_move(magnet_link, torrent_hash,deluge=True,folder='movies'):
 	if deluge:
 		os.system("deluge-console 'add %s'" % magnet_link)
 	else:
-		os.system("/home/***REMOVED***/torrent2usenet/mag2tor.sh '%s' /opt/rtorrent/watch/%s" % (magnet_link,folder))
+		os.system("/path/to/torrent2usenet/mag2tor.sh '%s' /opt/rtorrent/watch/%s" % (magnet_link,folder))
 
 	conn = sqlite3.connect(config.script_dir + '/downloads.db')
 	c = conn.cursor()
